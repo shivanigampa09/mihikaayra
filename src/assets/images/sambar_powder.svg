@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A150B"/>
+      <stop offset="50%" stop-color="#2A0B05"/>
+      <stop offset="100%" stop-color="#120402"/>
+    </linearGradient>
+    <radialGradient id="sambar" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF5722"/>
+      <stop offset="60%" stop-color="#E64A19"/>
+      <stop offset="100%" stop-color="#BF360C"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="400" cy="300" r="220" fill="none" stroke="#FF5722" stroke-width="2" stroke-dasharray="6,6" opacity="0.3"/>
+  <ellipse cx="400" cy="380" rx="220" ry="80" fill="#000" opacity="0.5"/>
+  <ellipse cx="400" cy="360" rx="200" ry="100" fill="#8D6E63" stroke="#FF7043" stroke-width="4"/>
+  <ellipse cx="400" cy="345" rx="185" ry="85" fill="url(#sambar)"/>
+  <!-- Powder Heap -->
+  <path d="M 270,340 Q 400,230 530,340 Z" fill="#FF7043" opacity="0.95"/>
+  <path d="M 310,330 Q 400,250 490,330 Z" fill="#FF8A65" opacity="0.9"/>
+  <!-- Curry Leaves -->
+  <path d="M 220,380 C 230,350 270,360 280,390 C 260,395 230,400 220,380 Z" fill="#2E7D32"/>
+  <path d="M 250,400 C 260,370 300,380 310,410 C 290,415 260,420 250,400 Z" fill="#388E3C"/>
+  <rect x="200" y="480" width="400" height="60" rx="30" fill="#1A0502" stroke="#FF5722" stroke-width="2"/>
+  <text x="400" y="517" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="bold" fill="#FBE9E7" text-anchor="middle">TRADITIONAL SAMBAR POWDER</text>
+  <text x="400" y="535" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#FF5722" text-anchor="middle" letter-spacing="2">AUTHENTIC SOUTH INDIAN HOTEL SPICE BLEND</text>
+</svg>

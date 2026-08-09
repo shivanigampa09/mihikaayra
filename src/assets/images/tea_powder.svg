@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1810"/>
+      <stop offset="50%" stop-color="#4A2810"/>
+      <stop offset="100%" stop-color="#1A0D08"/>
+    </linearGradient>
+    <linearGradient id="bowl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8B6508"/>
+    </linearGradient>
+    <radialGradient id="tea" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3D1E0B"/>
+      <stop offset="70%" stop-color="#200E05"/>
+      <stop offset="100%" stop-color="#0F0602"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="400" cy="300" r="220" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="6,6" opacity="0.4"/>
+  <!-- Steam rays -->
+  <path d="M 360,200 Q 370,150 360,100 M 400,190 Q 410,140 400,90 M 440,200 Q 450,150 440,100" stroke="#FFF" stroke-width="4" fill="none" opacity="0.25" stroke-linecap="round"/>
+  <!-- Bowl Base -->
+  <ellipse cx="400" cy="380" rx="220" ry="80" fill="#000" opacity="0.4"/>
+  <ellipse cx="400" cy="360" rx="200" ry="100" fill="url(#bowl)"/>
+  <ellipse cx="400" cy="350" rx="185" ry="85" fill="url(#tea)"/>
+  <!-- Granular texture -->
+  <g fill="#5A2E12" opacity="0.8">
+    <circle cx="320" cy="340" r="4"/><circle cx="350" cy="360" r="3"/><circle cx="380" cy="330" r="5"/>
+    <circle cx="420" cy="350" r="4"/><circle cx="450" cy="320" r="3"/><circle cx="470" cy="360" r="5"/>
+    <circle cx="300" cy="350" r="3"/><circle cx="340" cy="320" r="4"/><circle cx="410" cy="370" r="3"/>
+  </g>
+  <g fill="#1A0D08" opacity="0.9">
+    <circle cx="330" cy="330" r="2"/><circle cx="360" cy="350" r="3"/><circle cx="390" cy="340" r="2"/>
+    <circle cx="430" cy="330" r="3"/><circle cx="460" cy="340" r="2"/><circle cx="310" cy="360" r="3"/>
+  </g>
+  <!-- Cup of Tea -->
+  <g transform="translate(560,220)">
+    <ellipse cx="0" cy="60" rx="70" ry="25" fill="#000" opacity="0.3"/>
+    <path d="M -50,0 C -50,60 50,60 50,0 Z" fill="#FFF" stroke="#E2E8F0" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="48" ry="18" fill="#8B4513"/>
+    <ellipse cx="-10" cy="-3" rx="35" ry="12" fill="#D2691E" opacity="0.8"/>
+  </g>
+  <!-- Badge -->
+  <rect x="230" y="480" width="340" height="60" rx="30" fill="#200E05" stroke="#D4AF37" stroke-width="2"/>
+  <text x="400" y="517" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC" text-anchor="middle">PREMIUM CTC TEA POWDER</text>
+  <text x="400" y="535" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="2">HIGH ALTITUDE ASSAM &amp; DARJEELING</text>
+</svg>
