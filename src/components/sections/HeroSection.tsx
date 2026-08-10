@@ -64,9 +64,9 @@ export const HeroSection: React.FC = () => {
           </span>
         </h1>
 
-        {/* DETAILED SUBTITLE TEXT FROM REFERENCE PORTAL */}
+        {/* DETAILED COMPANY INTRODUCTION */}
         <p className="text-sm sm:text-base md:text-lg text-slate-100 font-normal leading-relaxed max-w-4xl mx-auto drop-shadow-md">
-          The <strong className="font-semibold text-white">Mihika Ayra Trade Portal</strong> offers a subscription-based Global Tender Service, bringing authenticated international tender opportunities directly to Indian exporters and global buyers. Currently, the platform hosts over <span className="text-[#00B4D8] font-semibold">2 Lakh+ live tenders</span> across <span className="text-[#00B4D8] font-semibold">150+ countries</span> and <span className="text-[#00B4D8] font-semibold">25+ sectors</span>, with daily real-time updates to ensure timely and relevant information.
+          <strong className="font-semibold text-white">Mihika Ayra Traders &amp; Imports &amp; Exports</strong> is a global trade partner connecting businesses across international markets. We specialize in sourcing, importing, and exporting quality products while providing reliable trade solutions, trusted supplier networks, and seamless logistics to help businesses grow worldwide.
         </p>
 
         {/* SEARCH BAR CONTAINER */}
