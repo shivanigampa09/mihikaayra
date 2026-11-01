@@ -90,7 +90,7 @@ export const AuthModal: React.FC = () => {
           authModalView === 'register' ? 'max-w-2xl' : 'max-w-md'
         }`}
       >
-        {/* MODAL HEADER */}
+        {/* Modal Header */}
         <div className="p-6 pb-4 border-b border-slate-100 flex items-center justify-between relative">
           <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#031322]">
             Welcome to Mihika Ayra
@@ -104,7 +104,7 @@ export const AuthModal: React.FC = () => {
           </button>
         </div>
 
-        {/* MODAL BODY */}
+        {/* Modal Body */}
         <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
           {isSubmitted ? (
             <div className="py-12 text-center space-y-4">
@@ -257,7 +257,7 @@ export const AuthModal: React.FC = () => {
                       />
                     </div>
 
-                    {/* GSTIN */}
+                    {/* Gstin */}
                     <div>
                       <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">
                         GSTIN

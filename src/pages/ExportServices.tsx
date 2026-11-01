@@ -1,82 +1,133 @@
 import React from 'react';
 import { PageHeader } from '../components/layout/PageHeader';
-import { Ship, ShieldCheck, CheckCircle2, Globe } from 'lucide-react';
+import { Globe, Ship, CheckCircle2, ArrowRight, PackageCheck } from 'lucide-react';
 import { useQuote } from '../context/QuoteContext';
-import { CTASection } from '../components/sections/CTASection';
-
-import bambooImg from "../assets/images/bamboo_products_1785757801080.jpg";
-import redChilliPowderImg from "../assets/images/black-pepper.jpeg";
-import woodenCraftsImg from "../assets/images/wooden_handicrafts_1785757750067.jpg";
-import prawnsImg from "../assets/images/prawns.jpeg";
-import aloeveraGelImg from "../assets/images/aloevera_gel.jpeg";
-import giftItemsImg from "../assets/images/gift_items_1785757932694.jpg";
+import headerBg from '../assets/images/bamboo_products_1785757801080.jpg';
 
 export const ExportServices: React.FC = () => {
   const { openQuoteModal } = useQuote();
 
+  const exportServicesList = [
+    'Exporting Indian Products Worldwide',
+    'Bulk Supply and Wholesale Trading',
+    'Agricultural Products, Food Commodities, and Other Goods',
+    'International Buyer and Supplier Coordination',
+    'Product Sourcing and Competitive Quotations',
+    'Global Trade and Long-Term Business Partnerships'
+  ];
+
   return (
     <div>
       <PageHeader
-        title="Outbound Export Operations"
-        subtitle="Sourcing, vacuum barrier packaging, laboratory COA testing, phytosanitary certs, and ocean container freight."
-        breadcrumbText="Export Services"
+        title="Exports"
+        subtitle="Exporting Indian Products to Global Markets"
+        breadcrumbText="Exports"
+        bgImage={headerBg}
+        compact={true}
       />
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-16 bg-gradient-to-b from-white via-slate-50 to-slate-100/60 text-slate-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#0077B6] bg-[#0077B6]/10 px-3 py-1 rounded-full inline-block">
-                Global Export Infrastructure
-              </span>
-              <h2 className="text-3xl font-bold font-serif text-[#0D3B66]">
-                Exporting Certified Indian Goods to 45+ Nations
-              </h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                We handle the complete export cycle for agricultural produce, marine seafood, authentic confections, and handcrafted artisan goods. Every shipment is backed by accredited lab test reports and full regulatory compliance.
-              </p>
+          {/* Main Title & Lead Intro */}
+          <div className="text-center space-y-4">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#0077B6] bg-[#0077B6]/10 px-4 py-1.5 rounded-full inline-block">
+              Mihika Ayra Traders and Imports &amp; Exports
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-[#031322] leading-tight">
+              Exporting Indian Products to Global Markets
+            </h1>
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
+              Mihika Ayra Traders and Imports &amp; Exports is committed to connecting Indian products with international markets. We aim to supply quality products sourced from India to buyers, wholesalers, distributors, and businesses across the globe.
+            </p>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              We welcome inquiries from international buyers seeking reliable Indian suppliers and competitive pricing across a wide range of product categories.
+            </p>
+          </div>
 
-              <div className="space-y-2 pt-2">
-                {[
-                  'USFDA prior notice, EU Phytosanitary & Health Certificates',
-                  'FOB, CFR, CIF, DDP & DDU shipping terms with full insurance',
-                  'Nitrogen-flushed vacuum barrier pouches & reefer container cold-chains',
-                  'Custom Private Label branding (White Labeling) for international chains'
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-xs text-slate-800 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
+          {/* Two-Column Grid: Our Export Services & Our Global Reach */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Our Export Services */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+              <div className="space-y-5">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0077B6] flex items-center justify-center">
+                    <PackageCheck className="w-5 h-5" />
                   </div>
-                ))}
-              </div>
-
-              <div className="pt-4">
-                <button
-                  onClick={() => openQuoteModal('Export Quotation')}
-                  className="bg-[#0D3B66] hover:bg-[#0077B6] text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-colors shadow-lg flex items-center gap-2"
-                >
-                  <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Request Export Proforma Quote</span>
-                </button>
+                  <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#031322]">
+                    Our Export Services
+                  </h2>
+                </div>
+                <ul className="space-y-3">
+                  {exportServicesList.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-800">
+                      <CheckCircle2 className="w-4 h-4 text-[#0077B6] shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="rounded-3xl overflow-hidden border-4 border-slate-100 shadow-xl">
-                <img
-                  src={bambooImg}
-                  alt="Export Shipping Containers"
-                  className="w-full h-[400px] object-cover"
-                />
+            {/* Our Global Reach */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+              <div className="space-y-5">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#031322]">
+                    Our Global Reach
+                  </h2>
+                </div>
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
+                  We aim to serve customers across Asia, Europe, Africa, the Middle East, North America, South America, and other international markets, subject to product availability and applicable export regulations.
+                </p>
+                <div className="pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+                  {['Asia', 'Europe', 'Africa', 'Middle East', 'North America', 'South America'].map((region, i) => (
+                    <span key={i} className="bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200/80">
+                      {region}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Looking to Source Products from India? Card */}
+          <div className="bg-[#031322] text-white rounded-3xl p-8 sm:p-12 space-y-6 shadow-xl relative overflow-hidden">
+            <div className="relative z-10 space-y-4 max-w-3xl">
+              <div className="flex items-center gap-3">
+                <Ship className="w-8 h-8 text-[#00B4D8]" />
+                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-white">
+                  Looking to Source Products from India?
+                </h3>
+              </div>
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+                Contact Mihika Ayra Traders and Imports &amp; Exports for product details, quotations, minimum order quantities (MOQ), packaging specifications, and international shipping options.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <button
+                  onClick={() => openQuoteModal('Export Quotation')}
+                  className="bg-[#0077B6] hover:bg-[#0096C7] text-white font-bold px-7 py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
+                >
+                  <span>Request Export Quotation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              <div className="pt-4 border-t border-white/10 text-xs text-slate-400">
+                <strong className="text-white block text-sm font-semibold">Mihika Ayra Traders and Imports &amp; Exports</strong>
+                <span>India | Import &amp; Export | Global Trade</span>
               </div>
             </div>
           </div>
 
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 };

@@ -29,11 +29,9 @@ export const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-center items-center bg-[#031322] text-white pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
-      {/* FULL-SCREEN BACKGROUND LOOPING VIDEO LAYER */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         
-        {/* VIDEO BACKDROP FILLING ENTIRE SCREEN */}
-        <video
+                <video
           ref={videoRef}
           autoPlay
           loop
@@ -45,16 +43,14 @@ export const HeroSection: React.FC = () => {
           <source src={tenderVid} type="video/mp4" />
         </video>
 
-        {/* GRADIENT OVERLAY BACKDROP FOR GUARANTEED SHADOW & CONTRAST */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#031322]/50 via-[#031322]/20 to-[#031322]/80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#031322]/50 via-[#031322]/20 to-[#031322]/80 pointer-events-none" />
       </div>
 
-      {/* FULL-SCREEN AMBIENT GLOW HIGHLIGHT */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,180,216,0.25)_0%,rgba(3,19,34,0)_70%)] pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,180,216,0.25)_0%,rgba(3,19,34,0)_70%)] pointer-events-none z-0" />
 
       <div className="max-w-5xl mx-auto text-center relative z-10 space-y-8 my-auto">
         
-        {/* MAIN HEADLINE */}
+        {/* Main Headline */}
         <h1 className="font-bold font-serif tracking-tight text-white leading-tight drop-shadow-2xl flex flex-col items-center justify-center gap-1.5 uppercase">
           <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white tracking-wider">
             MIHIKA AYRA
@@ -64,19 +60,19 @@ export const HeroSection: React.FC = () => {
           </span>
         </h1>
 
-        {/* DETAILED COMPANY INTRODUCTION */}
+        {/* Detailed Company Introduction */}
         <p className="text-sm sm:text-base md:text-lg text-slate-100 font-normal leading-relaxed max-w-4xl mx-auto drop-shadow-md">
           <strong className="font-semibold text-white">Mihika Ayra Traders &amp; Imports &amp; Exports</strong> is a global trade partner connecting businesses across international markets. We specialize in sourcing, importing, and exporting quality products while providing reliable trade solutions, trusted supplier networks, and seamless logistics to help businesses grow worldwide.
         </p>
 
-        {/* SEARCH BAR CONTAINER */}
+        {/* Search Bar Container */}
         <div className="pt-2 max-w-3xl mx-auto w-full">
           <form onSubmit={handleSearchSubmit} className="relative flex items-center bg-white rounded-2xl p-1.5 shadow-2xl border border-white/30">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search Tenders..."
+              placeholder="Search Products..."
               className="w-full bg-transparent text-slate-900 placeholder-slate-400 text-sm sm:text-base px-5 py-3 focus:outline-none font-medium"
             />
             <button

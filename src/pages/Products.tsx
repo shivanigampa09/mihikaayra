@@ -80,10 +80,10 @@ export const Products: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          {/* SEARCH & CATEGORIES BAR */}
+          {/* Search & Categories Bar */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-md space-y-6">
             
-            {/* SEARCH INPUT */}
+            {/* Search Input */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <div className="relative flex-1 w-full">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -119,7 +119,7 @@ export const Products: React.FC = () => {
               )}
             </div>
 
-            {/* CATEGORY BUTTON PILLS */}
+            {/* Category Button Pills */}
             <div className="space-y-2">
               <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
                 Filter by Sector ({PRODUCT_CATEGORIES.length} Categories):
@@ -154,7 +154,7 @@ export const Products: React.FC = () => {
 
           </div>
 
-          {/* PRODUCTS GRID */}
+          {/* Products Grid */}
           {filteredProducts.length === 0 ? (
             <div className="bg-white rounded-2xl p-12 text-center border border-slate-200 space-y-4">
               <Package className="w-12 h-12 text-slate-300 mx-auto" />

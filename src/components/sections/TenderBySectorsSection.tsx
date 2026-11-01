@@ -56,59 +56,24 @@ export const TenderBySectorsSection: React.FC = () => {
 
   const sectors: SectorItem[] = [
     {
-      id: 'podies',
-      title: 'Powders & Spices',
-      bgImg: podiesSectorImg,
+      id: 'automobiles',
+      title: 'Auto Mobile',
+      bgImg: automobilesImg,
     },
     {
-      id: 'pickles',
-      title: 'Pickles',
-      bgImg: pickleSectorImg,
+      id: 'industrial',
+      title: 'Industrial Equipment',
+      bgImg: industrialImg,
     },
     {
-      id: 'sweets',
-      title: 'Sweets & Snacks',
-      bgImg: sweetsCollectionImg,
+      id: 'medical-materials',
+      title: 'Medical Materials',
+      bgImg: medicalImg,
     },
     {
-      id: 'millets',
-      title: 'Millets',
-      bgImg: milletsSectorImg,
-    },
-    {
-      id: 'jute-bags',
-      title: 'Jute Bags',
-      bgImg: juteBagsSectorImg,
-    },
-    {
-      id: 'honey',
-      title: 'Honey',
-      bgImg: honeySectorImg,
-    },
-    {
-      id: 'fishes',
-      title: 'Seafood and Eggs and Meat',
-      bgImg: seafoodEggsMeatImg,
-    },
-    {
-      id: 'dry-fruits',
-      title: 'Dry Fruits',
-      bgImg: dryFruitsSectorImg,
-    },
-    {
-      id: 'cosmetics',
-      title: 'Herbal Cosmetics',
-      bgImg: cosmeticsSectorImg,
-    },
-    {
-      id: 'handcraft',
-      title: 'Hand Crafts',
-      bgImg: handcraftSectorImg,
-    },
-    {
-      id: 'textiles',
-      title: 'Fabrics',
-      bgImg: fabricsSectorImg,
+      id: 'engineering-materials',
+      title: 'Engineering Materials',
+      bgImg: engineeringImg,
     },
     {
       id: 'gaming-products',
@@ -121,24 +86,59 @@ export const TenderBySectorsSection: React.FC = () => {
       bgImg: interiorsSectorImg,
     },
     {
-      id: 'automobiles',
-      title: 'Auto Mobile',
-      bgImg: automobilesImg,
+      id: 'textiles',
+      title: 'Fabrics',
+      bgImg: fabricsSectorImg,
     },
     {
-      id: 'industrial',
-      title: 'Industrial Equipment & Machinery',
-      bgImg: industrialImg,
+      id: 'handcraft',
+      title: 'Hand Crafts',
+      bgImg: handcraftSectorImg,
     },
     {
-      id: 'medical-materials',
-      title: 'Medical Materials',
-      bgImg: medicalImg,
+      id: 'cosmetics',
+      title: 'Herbal Cosmetics',
+      bgImg: cosmeticsSectorImg,
     },
     {
-      id: 'engineering-materials',
-      title: 'Engineering Materials',
-      bgImg: engineeringImg,
+      id: 'dry-fruits',
+      title: 'Dry Fruits',
+      bgImg: dryFruitsSectorImg,
+    },
+    {
+      id: 'fishes',
+      title: 'Seafood',
+      bgImg: seafoodEggsMeatImg,
+    },
+    {
+      id: 'honey',
+      title: 'Honey',
+      bgImg: honeySectorImg,
+    },
+    {
+      id: 'millets',
+      title: 'Millets',
+      bgImg: milletsSectorImg,
+    },
+    {
+      id: 'sweets',
+      title: 'Sweets & Snacks',
+      bgImg: sweetsCollectionImg,
+    },
+    {
+      id: 'pickles',
+      title: 'Pickles',
+      bgImg: pickleSectorImg,
+    },
+    {
+      id: 'podies',
+      title: 'Powders & Spices',
+      bgImg: podiesSectorImg,
+    },
+    {
+      id: 'jute-bags',
+      title: 'Jute Bags',
+      bgImg: juteBagsSectorImg,
     },
   ];
 
@@ -200,16 +200,16 @@ export const TenderBySectorsSection: React.FC = () => {
     <section id="imports-exports-sectors" className="py-12 sm:py-16 bg-[#E3F2FD] text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* TITLE HEADER */}
+        {/* Title Header */}
         <div className="mb-6 sm:mb-8 flex items-center justify-between">
           <h2 className="text-2xl sm:text-3xl font-semibold font-serif text-[#031322] tracking-normal">
-            Imports & Exports Sectors
+            Exports and Imports Sectors
           </h2>
         </div>
 
         {/* MOBILE & TABLET CAROUSEL SLIDER (lg:hidden) */}
         <div className="relative lg:hidden">
-          {/* LEFT ARROW */}
+          {/* Left Arrow */}
           <button
             onClick={handlePrev}
             className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-xl border border-slate-200 text-slate-800 flex items-center justify-center hover:bg-slate-50 transition-transform active:scale-95 cursor-pointer"
@@ -218,7 +218,7 @@ export const TenderBySectorsSection: React.FC = () => {
             <ChevronLeft className="w-5 h-5 text-[#031322]" />
           </button>
 
-          {/* RIGHT ARROW */}
+          {/* Right Arrow */}
           <button
             onClick={handleNext}
             className="absolute -right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-xl border border-slate-200 text-slate-800 flex items-center justify-center hover:bg-slate-50 transition-transform active:scale-95 cursor-pointer"
@@ -235,13 +235,12 @@ export const TenderBySectorsSection: React.FC = () => {
                 onClick={() => handleSectorClick(sector.id)}
                 className="group relative h-[260px] sm:h-[300px] rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl active:shadow-2xl transition-all duration-300 flex flex-col justify-between p-4 active:scale-[0.98]"
               >
-                {/* IMAGE BACKGROUND WITH HIGH VIBRANCE & HOVER/ACTIVE ZOOM */}
-                <div
+                                <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 group-active:scale-110 brightness-105 contrast-105 saturate-110"
                   style={{ backgroundImage: `url(${sector.bgImg})` }}
                 />
 
-                {/* GRADIENT OVERLAY FOR CRISP READABILITY WITHOUT DULLING THE IMAGE */}
+                {/* Gradient Overlay For Crisp Readability Without Dulling The Image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-black/10 group-hover:from-slate-950/75 transition-colors" />
 
                 {/* TITLE AT TOP-LEFT */}
@@ -269,14 +268,13 @@ export const TenderBySectorsSection: React.FC = () => {
               onClick={() => handleSectorClick(sector.id)}
               className="group relative h-[320px] rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between p-6"
             >
-              {/* IMAGE BACKGROUND */}
+              {/* Image Background */}
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105 saturate-110"
                 style={{ backgroundImage: `url(${sector.bgImg})` }}
               />
 
-              {/* DUAL DIRECTION GRADIENT OVERLAY FOR CRISP HEADINGS */}
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/25 to-slate-950/85 group-hover:from-slate-950/90 transition-colors" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/25 to-slate-950/85 group-hover:from-slate-950/90 transition-colors" />
 
               {/* TITLE AT TOP-LEFT WITH HIGH VISIBILITY BACKDROP */}
               <div className="relative z-10">

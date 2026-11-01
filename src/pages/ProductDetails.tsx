@@ -29,7 +29,7 @@ export const ProductDetails: React.FC = () => {
       <section className="py-16 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
-          {/* TOP DETAILED VIEW GRID */}
+          {/* Top Detailed View Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
             {/* LEFT: IMAGE GALLERY (5 COLS) */}
@@ -42,7 +42,7 @@ export const ProductDetails: React.FC = () => {
                 />
               </div>
 
-              {/* GALLERY THUMBNAILS */}
+              {/* Gallery Thumbnails */}
               {product.galleryImages && product.galleryImages.length > 1 && (
                 <div className="flex items-center gap-3 overflow-x-auto pb-2">
                   {product.galleryImages.map((img, idx) => (
@@ -59,7 +59,7 @@ export const ProductDetails: React.FC = () => {
                 </div>
               )}
 
-              {/* QUICK BADGES */}
+              {/* Quick Badges */}
               <div className="bg-white rounded-xl p-4 border border-slate-200 space-y-2 text-xs">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-500 font-semibold">Minimum Order Quantity (MOQ):</span>
@@ -100,7 +100,7 @@ export const ProductDetails: React.FC = () => {
                 {product.fullDescription}
               </p>
 
-              {/* SPECIFICATIONS TABLE */}
+              {/* Specifications Table */}
               <div className="space-y-3">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-[#0D3B66] font-serif border-b border-slate-100 pb-2">
                   Export Commercial Specifications
@@ -115,7 +115,7 @@ export const ProductDetails: React.FC = () => {
                 </div>
               </div>
 
-              {/* BENEFITS & APPLICATIONS */}
+              {/* Benefits & Applications */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <div>
                   <h4 className="text-xs font-bold text-[#0D3B66] uppercase tracking-wider mb-2">Key Quality Benefits</h4>
@@ -142,7 +142,7 @@ export const ProductDetails: React.FC = () => {
                 </div>
               </div>
 
-              {/* EXPORT MARKETS & PACKAGING OPTIONS */}
+              {/* Export Markets & Packaging Options */}
               <div className="space-y-2 pt-2 border-t border-slate-100">
                 <div className="flex items-center gap-1.5 text-xs font-bold text-[#0D3B66]">
                   <Globe className="w-4 h-4 text-[#0077B6]" />
@@ -157,7 +157,7 @@ export const ProductDetails: React.FC = () => {
                 </div>
               </div>
 
-              {/* ACTION CTA BUTTON */}
+              {/* Action Cta Button */}
               <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3">
                 <QuoteNowButton itemName={product.name} />
               </div>
@@ -166,7 +166,7 @@ export const ProductDetails: React.FC = () => {
 
           </div>
 
-          {/* RELATED PRODUCTS */}
+          {/* Related Products */}
           {relatedProducts.length > 0 && (
             <div className="pt-8 border-t border-slate-200 space-y-6">
               <h2 className="text-2xl font-bold font-serif text-[#0D3B66]">

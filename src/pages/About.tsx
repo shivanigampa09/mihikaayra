@@ -25,7 +25,7 @@ export const About: React.FC = () => {
         bgImage={aboutBgImg}
       />
 
-      {/* COMPANY OVERVIEW SECTION */}
+      {/* Company Overview Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -91,7 +91,7 @@ export const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* MISSION */}
+            {/* Mission */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md space-y-4">
               <div className="w-12 h-12 rounded-xl bg-[#D4AF37] text-slate-950 flex items-center justify-center font-bold">
                 <Target className="w-6 h-6" />
@@ -102,7 +102,7 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            {/* VISION */}
+            {/* Vision */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md space-y-4">
               <div className="w-12 h-12 rounded-xl bg-[#00B4D8] text-slate-950 flex items-center justify-center font-bold">
                 <Eye className="w-6 h-6" />
@@ -113,7 +113,7 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            {/* VALUES */}
+            {/* Values */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md space-y-4">
               <div className="w-12 h-12 rounded-xl bg-emerald-400 text-slate-950 flex items-center justify-center font-bold">
                 <Heart className="w-6 h-6" />
@@ -129,7 +129,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* INFRASTRUCTURE & QUALITY ASSURANCE */}
+      {/* Infrastructure & Quality Assurance */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -192,10 +192,10 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* WHY CHOOSE US REUSABLE SECTION */}
+      {/* Why Choose Us Reusable Section */}
       <WhyChooseUsSection />
 
-      {/* CTA BANNER */}
+      {/* Cta Banner */}
       <CTASection />
     </div>
   );

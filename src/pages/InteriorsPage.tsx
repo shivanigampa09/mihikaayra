@@ -21,8 +21,8 @@ interface InteriorItem {
   name: string;
   image: string;
   manufacturingProcess: string;
-  ingredients: string[];
-  purposeOfIngredients: string;
+  specifications: string[];
+  designHighlights: string;
 }
 
 export const InteriorsPage: React.FC = () => {
@@ -34,80 +34,80 @@ export const InteriorsPage: React.FC = () => {
       name: 'Designer Blackout & Sheer Curtains',
       image: designerCurtainsImg,
       manufacturingProcess: 'Precision triple-weave polyester black yarn interlayer technology providing 99% light blockage and thermal insulation. Combined with delicate linen-blend sheer drapery, stainless steel grommet rings, and tailored pinch-pleat tailoring.',
-      ingredients: ['Triple-Weave Blackout Polyester', 'Organic Linen Blend Sheer', 'Rust-Proof Stainless Steel Eyelets'],
-      purposeOfIngredients: 'Provides complete room darkening, thermal temperature regulation, UV solar protection, and elegant window framing for homes and luxury hotels.'
+      specifications: ['Triple-Weave Blackout Polyester', 'Organic Linen Blend Sheer', 'Rust-Proof Stainless Steel Eyelets'],
+      designHighlights: 'Provides complete room darkening, thermal temperature regulation, UV solar protection, and elegant window framing for homes and luxury hotels.'
     },
     {
       id: 'sofa-fabrics',
       name: 'Premium Velvet & Chenille Sofa Upholstery Fabrics',
       image: sofaFabricsImg,
       manufacturingProcess: 'High-rub count (50,000+ Martindale) dense cut-pile velvet and textured chenille Jacquard weaving. Treated with nano stain-resistant coatings and fire-retardant backing suitable for heavy commercial lounge seating.',
-      ingredients: ['High-Density Cotton Velvet Blend', 'Stain-Resistant Nano Finish', 'Fire-Retardant Commercial Backing'],
-      purposeOfIngredients: 'Offers opulent tactile softness, long-lasting spill resistance, and luxurious color retention for residential living rooms and commercial lobbies.'
+      specifications: ['High-Density Cotton Velvet Blend', 'Stain-Resistant Nano Finish', 'Fire-Retardant Commercial Backing'],
+      designHighlights: 'Offers opulent tactile softness, long-lasting spill resistance, and luxurious color retention for residential living rooms and commercial lobbies.'
     },
     {
       id: 'cushions-pillow-covers',
       name: 'Hand-Embroidered Velvet & Silk Cushion Covers',
       image: cushionCoversImg,
       manufacturingProcess: 'Crafted from silk organza, linen, and plush velvet adorned with intricate Zardozi metallic threadwork, tassel trim, and hidden brass zipper closures. Stuffed with hypoallergenic micro-fiber fill inserts.',
-      ingredients: ['Raw Silk & Velvet Base', 'Zardozi Metallic Threading', 'Hypoallergenic Virgin Microfiber Fill', 'Concealed Zipper'],
-      purposeOfIngredients: 'Adds instant pop of color, plush physical comfort, and rich cultural artisanal texture to sofas, armchairs, and beddings.'
+      specifications: ['Raw Silk & Velvet Base', 'Zardozi Metallic Threading', 'Hypoallergenic Virgin Microfiber Fill', 'Concealed Zipper'],
+      designHighlights: 'Adds instant pop of color, plush physical comfort, and rich cultural artisanal texture to sofas, armchairs, and beddings.'
     },
     {
       id: 'carpets-rugs',
       name: 'Hand-Tufted Wool & Silk Area Carpets & Rugs',
       image: woolSilkCarpetsImg,
       manufacturingProcess: 'Hand-tufted by skilled weavers using 100% New Zealand wool and viscose silk highlights on a heavy cotton canvas backing. Carved multi-level pile creates 3D dimensional floral and geometric motifs.',
-      ingredients: ['100% New Zealand Fleece Wool', 'Bamboo Viscose Silk Accent Yarns', 'Natural Latex & Cotton Canvas Backing'],
-      purposeOfIngredients: 'Insulates hard flooring against cold, absorbs acoustic reverberation, and anchors living room and board room seating zones.'
+      specifications: ['100% New Zealand Fleece Wool', 'Bamboo Viscose Silk Accent Yarns', 'Natural Latex & Cotton Canvas Backing'],
+      designHighlights: 'Insulates hard flooring against cold, absorbs acoustic reverberation, and anchors living room and board room seating zones.'
     },
     {
       id: 'wallpapers',
       name: 'Luxury Textured Non-Woven & Metallic Wallpapers',
       image: metallicWallpapersImg,
       manufacturingProcess: 'Printed on breathable eco-friendly non-woven fiber substrates using water-based non-toxic inks. Embossed with subtle fabric textures, metallic gold foil accents, and scrubbable vinyl protective topcoats.',
-      ingredients: ['Breathable Non-Woven Wood Pulp Base', 'Water-Based Eco Ink Pigments', 'Metallic Gold Leaf Detailing'],
-      purposeOfIngredients: 'Creates dramatic accent feature walls, conceals minor wall imperfections, and brings tactile warmth to master suites and reception areas.'
+      specifications: ['Breathable Non-Woven Wood Pulp Base', 'Water-Based Eco Ink Pigments', 'Metallic Gold Leaf Detailing'],
+      designHighlights: 'Creates dramatic accent feature walls, conceals minor wall imperfections, and brings tactile warmth to master suites and reception areas.'
     },
     {
       id: 'wall-decor',
       name: 'Artisanal Brass & Carved Wooden Wall Decor',
       image: brassWallDecorImg,
       manufacturingProcess: 'Hand-chiseled reclaimed Sheesham wood panels combined with antique hand-hammered brass leaf motifs and geometric metal art frames finished in weather-sealed electroplated coats.',
-      ingredients: ['Seasoned Teak / Sheesham Wood', 'Electroplated Brass Metalwork', 'Protective Clear Lacquer'],
-      purposeOfIngredients: 'Elevates plain wall spaces with dimensional sculpture, artistic storytelling, and timeless handcrafted elegance.'
+      specifications: ['Seasoned Teak / Sheesham Wood', 'Electroplated Brass Metalwork', 'Protective Clear Lacquer'],
+      designHighlights: 'Elevates plain wall spaces with dimensional sculpture, artistic storytelling, and timeless handcrafted elegance.'
     },
     {
       id: 'lighting-fixtures',
       name: 'Hand-Blown Glass & Brass Pendant Lighting Fixtures',
       image: pendantLightsImg,
       manufacturingProcess: 'Artisan hand-blown amber glass globes mounted on solid brushed brass stems. Fitted with dimmable warm LED filament bulbs and heat-resistant ceramic E27 socket hardware.',
-      ingredients: ['Artisanal Hand-Blown Amber Glass', 'Solid Brushed Brass Fittings', 'Dimmable Warm LED Filament Light'],
-      purposeOfIngredients: 'Disperses warm, glare-free ambient illumination, serving as a captivating architectural centerpiece above dining tables and kitchen islands.'
+      specifications: ['Artisanal Hand-Blown Amber Glass', 'Solid Brushed Brass Fittings', 'Dimmable Warm LED Filament Light'],
+      designHighlights: 'Disperses warm, glare-free ambient illumination, serving as a captivating architectural centerpiece above dining tables and kitchen islands.'
     },
     {
       id: 'furniture',
       name: 'Bespoke Teak & Marble Living Room Furniture',
       image: teakMarbleFurnitureImg,
       manufacturingProcess: 'Kiln-dried solid Teak wood frame joinery paired with polished Italian Carrara marble tops. Precision CNC cut, hand-sanded, and sealed with anti-scratch matte polyurethane lacquer.',
-      ingredients: ['Kiln-Dried Solid Teak Wood', 'Natural Italian Carrara Marble', 'Polyurethane Protective Coat'],
-      purposeOfIngredients: 'Delivers structural heirloom durability, ergonomic dining/lounge utility, and sophisticated organic beauty to residential and commercial spaces.'
+      specifications: ['Kiln-Dried Solid Teak Wood', 'Natural Italian Carrara Marble', 'Polyurethane Protective Coat'],
+      designHighlights: 'Delivers structural heirloom durability, ergonomic dining/lounge utility, and sophisticated organic beauty to residential and commercial spaces.'
     },
     {
       id: 'decorative-mirrors',
       name: 'Hand-Carved Gold Leaf Accent Decorative Mirrors',
       image: goldAccentMirrorsImg,
       manufacturingProcess: '5mm HD copper-free silver mirror glass housed in intricately carved wooden frames overlaid with antiqued gold leaf foil and shatter-resistant safety backing film.',
-      ingredients: ['5mm HD Copper-Free Silver Mirror Glass', 'Carved Solid Wood Frame', 'Antique Gold Leaf Foiling'],
-      purposeOfIngredients: 'Reflects natural room light, visually expands small rooms, and functions as a stunning focal wall art piece in foyers and vanity dressing areas.'
+      specifications: ['5mm HD Copper-Free Silver Mirror Glass', 'Carved Solid Wood Frame', 'Antique Gold Leaf Foiling'],
+      designHighlights: 'Reflects natural room light, visually expands small rooms, and functions as a stunning focal wall art piece in foyers and vanity dressing areas.'
     },
     {
       id: 'home-decor-accessories',
       name: 'Luxury Ceramic Vases, Brass Artifacts & Home Décor Accessories',
       image: ceramicBrassVasesImg,
       manufacturingProcess: 'High-fired stoneware ceramic vases dipped in reactive glazes, paired with hand-cast solid brass bowls, marble coaster sets, and scented soy wax candles.',
-      ingredients: ['High-Fired Stoneware Clay', 'Cast Solid Brass Alloys', 'Natural White Italian Marble'],
-      purposeOfIngredients: 'Provides subtle finishing touches, tabletop styling, and curated sophisticated ambiance across coffee tables, consoles, and shelves.'
+      specifications: ['High-Fired Stoneware Clay', 'Cast Solid Brass Alloys', 'Natural White Italian Marble'],
+      designHighlights: 'Provides subtle finishing touches, tabletop styling, and curated sophisticated ambiance across coffee tables, consoles, and shelves.'
     }
   ];
 
@@ -127,7 +127,7 @@ export const InteriorsPage: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          {/* CATEGORY FILTER PILLS */}
+          {/* Category Filter Pills */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-md space-y-3">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
               Filter by Interior Decor Element ({interiorsList.length} Categories):
@@ -159,14 +159,14 @@ export const InteriorsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* INTERIORS CARDS LIST */}
+          {/* Interiors Cards List */}
           <div className="space-y-8">
             {filteredList.map(item => (
               <div
                 key={item.id}
                 className="bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-stretch"
               >
-                {/* COMPACT LEFT IMAGE COLUMN */}
+                {/* Compact Left Image Column */}
                 <div className="w-full md:w-64 lg:w-72 shrink-0 relative h-52 md:h-auto overflow-hidden bg-slate-100 flex items-center justify-center p-3">
                   <img
                     src={item.image}
@@ -176,11 +176,11 @@ export const InteriorsPage: React.FC = () => {
                   />
                 </div>
 
-                {/* RIGHT CONTENT COLUMN */}
+                {/* Right Content Column */}
                 <div className="flex-1 p-6 sm:p-7 space-y-5 flex flex-col justify-between">
                   <div className="space-y-4">
                     
-                    {/* TITLE */}
+                    {/* Title */}
                     <div>
                       <h2 className="text-2xl font-bold font-serif text-[#031322] leading-tight">
                         {item.name}
@@ -198,13 +198,13 @@ export const InteriorsPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* MATERIALS & COMPONENTS */}
+                    {/* Materials & Components */}
                     <div className="space-y-2">
                       <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                         Materials & Raw Components:
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
-                        {item.ingredients.map((ing, i) => (
+                        {item.specifications.map((ing, i) => (
                           <span key={i} className="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg font-medium border border-slate-200">
                             {ing}
                           </span>
@@ -212,18 +212,18 @@ export const InteriorsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* PURPOSE & AESTHETIC FUNCTION */}
+                    {/* Purpose & Aesthetic Function */}
                     <div className="bg-[#FFFBEB] rounded-2xl p-4 border border-amber-200/80 space-y-1.5">
                       <h4 className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-amber-600" />
                         Interior Function & Aesthetic Value:
                       </h4>
                       <p className="text-xs text-slate-700 leading-relaxed font-sans">
-                        {item.purposeOfIngredients}
+                        {item.designHighlights}
                       </p>
                     </div>
 
-                    {/* ACTION BUTTONS */}
+                    {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-end">
                       <QuoteNowButton itemName={item.name} />
                     </div>

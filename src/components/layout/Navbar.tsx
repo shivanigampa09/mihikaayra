@@ -109,13 +109,13 @@ export const Navbar: React.FC = () => {
           {/* DESKTOP NAVBAR LAYOUT (hidden lg:flex) */}
           <div className="hidden lg:flex items-center justify-between">
             
-            {/* BRAND LOGO WITH QUICK LINKS DROPDOWN BELOW */}
+            {/* Brand Logo With Quick Links Dropdown Below */}
             <div className="flex flex-col items-start gap-1">
               <Link to="/" onClick={handleHomeClick} className="flex items-center gap-3 group">
                 <Logo size="md" showText={true} />
               </Link>
 
-              {/* QUICK LINKS MENU TOGGLE BELOW LOGO IN DESKTOP */}
+              {/* Quick Links Menu Toggle Below Logo In Desktop */}
               <div className="relative group/quick pl-0.5">
                 <button 
                   onClick={(e) => { e.stopPropagation(); setIsQuickMenuOpen(!isQuickMenuOpen); }}
@@ -127,7 +127,7 @@ export const Navbar: React.FC = () => {
                   <ChevronDown className="w-3 h-3 transition-transform group-hover/quick:rotate-180 text-slate-300" />
                 </button>
 
-                {/* QUICK LINKS HOVER DROPDOWN MENU */}
+                {/* Quick Links Hover Dropdown Menu */}
                 <div className="absolute top-full left-0 mt-1 w-56 bg-[#071927] border border-white/15 rounded-xl shadow-2xl p-2 z-50 hidden group-hover/quick:block animate-in fade-in duration-150">
                   <button
                     onClick={() => setActiveQuickModal('schedule')}
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
 
-            {/* DESKTOP NAVIGATION LINKS */}
+            {/* Desktop Navigation Links */}
             <div className="hidden lg:flex items-center space-x-1 xl:space-x-3">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path;
@@ -174,7 +174,7 @@ export const Navbar: React.FC = () => {
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMegaMenuOpen ? 'rotate-180 text-[#D4AF37]' : ''}`} />
                       </Link>
 
-                      {/* MEGA MENU DROPDOWN */}
+                      {/* Mega Menu Dropdown */}
                       {isMegaMenuOpen && (
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-[#071927] text-white rounded-2xl shadow-2xl border border-white/15 p-6 z-50 animate-in fade-in slide-in-from-top-3 duration-200">
                           {/* Categories List */}
@@ -280,7 +280,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* MOBILE SLIDE MENU */}
+        {/* Mobile Slide Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-[#031322] border-b border-white/10 px-4 pt-4 pb-6 space-y-2 mt-2 animate-in slide-in-from-top-2 duration-200">
             {navLinks.map((link) => (
@@ -343,7 +343,7 @@ export const Navbar: React.FC = () => {
               <X className="w-5 h-5" />
             </button>
 
-            {/* SCHEDULE MODAL */}
+            {/* Schedule Modal */}
             {activeQuickModal === 'schedule' && (
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
@@ -384,7 +384,7 @@ export const Navbar: React.FC = () => {
               </div>
             )}
 
-            {/* TRACKING MODAL */}
+            {/* Tracking Modal */}
             {activeQuickModal === 'tracking' && (
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
@@ -442,7 +442,7 @@ export const Navbar: React.FC = () => {
               </div>
             )}
 
-            {/* DOCUMENTATION MODAL */}
+            {/* Documentation Modal */}
             {activeQuickModal === 'documentation' && (
               <div className="space-y-5">
                 <div className="flex items-center gap-3">

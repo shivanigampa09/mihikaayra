@@ -41,7 +41,7 @@ export const SearchModal: React.FC = () => {
     <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-start justify-center pt-20 px-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 relative">
         
-        {/* SEARCH INPUT BAR */}
+        {/* Search Input Bar */}
         <div className="p-4 bg-[#0D3B66] flex items-center gap-3">
           <Search className="w-5 h-5 text-[#D4AF37]" />
           <input
@@ -60,7 +60,7 @@ export const SearchModal: React.FC = () => {
           </button>
         </div>
 
-        {/* SEARCH RESULTS BODY */}
+        {/* Search Results Body */}
         <div className="p-6 max-h-[60vh] overflow-y-auto space-y-4">
           {!query.trim() ? (
             <div className="text-center py-8 text-slate-400 space-y-3">

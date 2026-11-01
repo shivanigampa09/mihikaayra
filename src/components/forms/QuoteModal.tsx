@@ -58,7 +58,7 @@ export const QuoteModal: React.FC = () => {
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
       <div className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 relative my-8">
         
-        {/* MODAL HEADER */}
+        {/* Modal Header */}
         <div className="bg-[#0D3B66] text-white p-6 relative">
           <button
             onClick={handleClose}
@@ -78,7 +78,7 @@ export const QuoteModal: React.FC = () => {
           </p>
         </div>
 
-        {/* BODY CONTENT */}
+        {/* Body Content */}
         <div className="p-6 space-y-4">
           {isSubmitted ? (
             <div className="text-center py-8 space-y-4">

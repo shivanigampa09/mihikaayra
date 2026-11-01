@@ -14,8 +14,8 @@ interface JuteBagItem {
   name: string;
   image: string;
   manufacturingProcess: string;
-  ingredients: string[];
-  purposeOfIngredients: string;
+  specifications: string[];
+  durabilityFeatures: string;
 }
 
 export const JuteBagsPage: React.FC = () => {
@@ -27,42 +27,42 @@ export const JuteBagsPage: React.FC = () => {
       name: 'Eco Jute Tote & Shopping Bags',
       image: juteShoppingBagsImg,
       manufacturingProcess: `Sourced from premium 100% natural golden raw jute fibers. Retting and carding processes yield high-tensile weave jute yarn. The jute fabric is woven on heavy-duty looms and laminated with a thin moisture-proof barrier lining. Cut fabric panels are screen-printed with eco-friendly water-based pigments, then double-stitched with heavy thread and reinforced padded handles capable of sustaining loads up to 15 kg. Each bag undergoes quality inspection, thread trimming, and bundling.`,
-      ingredients: [
+      specifications: [
         '100% Natural Golden Jute Fabric',
         'Laminated LDPE Inner Lining',
         'Padded Cotton Handles',
         'Eco-Friendly Non-Toxic Inks',
         'Reinforced Nylon Stitching Thread'
       ],
-      purposeOfIngredients: `Golden Jute Yarn gives immense tensile strength and zero synthetic environmental impact. Laminated LDPE lining prevents liquid leaks and moisture accumulation. Padded cotton handles ensure comfort while carrying heavy items. Eco-friendly inks guarantee clear printing without chemical odors.`
+      durabilityFeatures: `Golden Jute Yarn gives immense tensile strength and zero synthetic environmental impact. Laminated LDPE lining prevents liquid leaks and moisture accumulation. Padded cotton handles ensure comfort while carrying heavy items. Eco-friendly inks guarantee clear printing without chemical odors.`
     },
     {
       id: 'jute-water-bottle-jug',
       name: 'Jute Water Bottle & Jug Bags',
       image: juteJugBagsImg,
       manufacturingProcess: `Crafted specifically for carrying water bottles, thermos flasks, oil jugs, and liquid containers. High-density woven burlap jute fabric is cut into tall cylindrical and compartmented patterns. Internal padded foam dividers and waterproof lining are integrated to cushion glass or metal containers. Handles are triple-stitched around the base perimeter to distribute weight evenly and prevent handle tearing.`,
-      ingredients: [
+      specifications: [
         'Natural Burlap Jute Canvas',
         'Internal Thermal PE Foil Lamination',
         'Cushioning EPE Foam Dividers',
         'Heavy-Duty Cotton Webbing Straps',
         'Reinforced Base Plate Board'
       ],
-      purposeOfIngredients: `High-density jute outer canvas prevents abrasion and tearing. Internal PE foil and EPE foam protect jugs from impact damage. Reinforced base plate supports heavy liquid weights. Triple-stitched cotton handles ensure secure daily carrying.`
+      durabilityFeatures: `High-density jute outer canvas prevents abrasion and tearing. Internal PE foil and EPE foam protect jugs from impact damage. Reinforced base plate supports heavy liquid weights. Triple-stitched cotton handles ensure secure daily carrying.`
     },
     {
       id: 'jute-lunch-food-carrier',
       name: 'Insulated Jute Lunch & Food Carrier Bags',
       image: juteFoodCarrierImg,
       manufacturingProcess: `Specially engineered for office, school, and picnic meal transportation. High-grade natural jute fabric is combined with a 3mm thermal aluminum foil insulation inner liner to maintain hot or cold food temperatures for up to 4 hours. Fitted with smooth rust-resistant zippers, internal mesh pockets for cutlery, and padded soft handles. Precision edge-binding stitching prevents seam fraying.`,
-      ingredients: [
+      specifications: [
         '100% Laminated Natural Jute Shell',
         '3mm Thermal Aluminum Foil Insulation',
         'Internal Cutlery Netting Mesh',
         'Heavy-Duty Metal Zipper Closure',
         'Soft Cotton Padded Handles'
       ],
-      purposeOfIngredients: `Thermal aluminum lining keeps packed meals warm and fresh while providing leakproof protection. High-density jute shell presents a stylish eco-friendly aesthetic. Internal cutlery mesh keeps utensils organized. Rust-proof zipper secures contents safely.`
+      durabilityFeatures: `Thermal aluminum lining keeps packed meals warm and fresh while providing leakproof protection. High-density jute shell presents a stylish eco-friendly aesthetic. Internal cutlery mesh keeps utensils organized. Rust-proof zipper secures contents safely.`
     }
   ];
 
@@ -82,7 +82,7 @@ export const JuteBagsPage: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          {/* CATEGORY FILTER PILLS */}
+          {/* Category Filter Pills */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-md space-y-3">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
               Filter by Jute Bag Variety ({juteBagsList.length} Items):
@@ -114,14 +114,14 @@ export const JuteBagsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* JUTE BAG CARDS LIST */}
+          {/* Jute Bag Cards List */}
           <div className="space-y-8">
             {filteredJuteBags.map(bag => (
               <div
                 key={bag.id}
                 className="bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-stretch"
               >
-                {/* COMPACT LEFT IMAGE COLUMN */}
+                {/* Compact Left Image Column */}
                 <div className="w-full md:w-64 lg:w-72 shrink-0 relative h-52 md:h-auto overflow-hidden bg-slate-100 flex items-center justify-center p-3">
                   <img
                     src={bag.image}
@@ -131,18 +131,18 @@ export const JuteBagsPage: React.FC = () => {
                   />
                 </div>
 
-                {/* RIGHT CONTENT COLUMN */}
+                {/* Right Content Column */}
                 <div className="flex-1 p-6 sm:p-7 space-y-5 flex flex-col justify-between">
                   <div className="space-y-4">
                     
-                    {/* TITLE */}
+                    {/* Title */}
                     <div>
                       <h2 className="text-2xl font-bold font-serif text-[#031322] leading-tight">
                         {bag.name}
                       </h2>
                     </div>
 
-                    {/* MANUFACTURING PROCESS TEXT BOX */}
+                    {/* Manufacturing Process Text Box */}
                     <div className="bg-[#F8FAFC] rounded-2xl p-4.5 border border-slate-200 space-y-2">
                       <h4 className="text-xs font-bold text-[#0D3B66] uppercase tracking-wider flex items-center gap-2">
                         <Factory className="w-4 h-4 text-[#0077B6]" />
@@ -153,7 +153,7 @@ export const JuteBagsPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* RAW MATERIALS LIST */}
+                    {/* Raw Materials List */}
                     <div className="space-y-2">
                       <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                         Raw Materials:
@@ -167,7 +167,7 @@ export const JuteBagsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* PURPOSE OF MATERIALS */}
+                    {/* Purpose Of Materials */}
                     <div className="bg-[#FFFBEB] rounded-2xl p-4 border border-amber-200/80 space-y-1.5">
                       <h4 className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-amber-600" />
@@ -178,7 +178,7 @@ export const JuteBagsPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* ACTION BUTTONS */}
+                    {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-end">
                       <QuoteNowButton itemName={bag.name} />
                     </div>

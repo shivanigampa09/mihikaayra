@@ -46,7 +46,7 @@ export const QuoteNowButton: React.FC<QuoteNowButtonProps> = ({ itemName, classN
         <span>Quote Now</span>
       </button>
 
-      {/* COMPACT POPOVER WITH 2 SMALL OPTIONS (MAIL & WHATSAPP) */}
+      
       {isOpen && (
         <div className="absolute right-0 bottom-full mb-2 z-[9999] w-48 sm:w-52 bg-white rounded-2xl p-2.5 shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 text-slate-800">
           <div className="flex items-center justify-between pb-1.5 mb-1.5 border-b border-slate-100 px-1">
@@ -61,7 +61,7 @@ export const QuoteNowButton: React.FC<QuoteNowButtonProps> = ({ itemName, classN
           </div>
 
           <div className="flex flex-col gap-1.5">
-            {/* MAIL OPTION */}
+            {/* Mail Option */}
             <a
               href={emailLink}
               target="_blank"
@@ -78,7 +78,7 @@ export const QuoteNowButton: React.FC<QuoteNowButtonProps> = ({ itemName, classN
               </div>
             </a>
 
-            {/* WHATSAPP OPTION */}
+            {/* Whatsapp Option */}
             <a
               href={whatsappLink}
               target="_blank"

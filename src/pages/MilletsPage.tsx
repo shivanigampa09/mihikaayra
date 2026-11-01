@@ -143,7 +143,7 @@ export const MilletsPage: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          {/* CATEGORY SELECTOR TABS */}
+          {/* Category Selector Tabs */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
               Filter by Millet Variety ({milletsList.length} Items):
@@ -182,7 +182,7 @@ export const MilletsPage: React.FC = () => {
                 key={millet.id}
                 className="bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-stretch"
               >
-                {/* PRODUCT IMAGE CONTAINER */}
+                {/* Product Image Container */}
                 <div className="w-full md:w-[380px] lg:w-[440px] shrink-0 relative h-72 md:h-auto min-h-[300px] md:min-h-[360px] overflow-hidden bg-slate-50/80 flex items-center justify-center p-4">
                   <img 
                     src={millet.image} 
@@ -192,18 +192,18 @@ export const MilletsPage: React.FC = () => {
                   />
                 </div>
 
-                {/* CONTENT CONTAINER */}
+                {/* Content Container */}
                 <div className="flex-1 p-6 sm:p-7 space-y-5 flex flex-col justify-between">
                   <div className="space-y-4">
                     
-                    {/* TITLE */}
+                    {/* Title */}
                     <div>
                       <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#031322] leading-tight">
                         {millet.name}
                       </h2>
                     </div>
 
-                    {/* MANUFACTURING PROCESS TEXT BOX */}
+                    {/* Manufacturing Process Text Box */}
                     <div className="bg-[#F8FAFC] rounded-2xl p-4 border border-slate-200 space-y-2">
                       <h4 className="text-xs font-bold text-[#0D3B66] uppercase tracking-wider flex items-center gap-2">
                         <Leaf className="w-4 h-4 text-[#0077B6]" />
@@ -214,7 +214,7 @@ export const MilletsPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* NUTRITIONAL BENEFITS */}
+                    {/* Nutritional Benefits */}
                     <div className="bg-[#FFFBEB] rounded-2xl p-4 border border-amber-200/80 space-y-1.5">
                       <h4 className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-amber-600" />
@@ -227,7 +227,7 @@ export const MilletsPage: React.FC = () => {
                       </ul>
                     </div>
 
-                    {/* KEY HIGHLIGHTS */}
+                    {/* Key Highlights */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                       {millet.keyHighlights.map((hl, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
@@ -237,7 +237,7 @@ export const MilletsPage: React.FC = () => {
                       ))}
                     </div>
 
-                    {/* ACTION BUTTONS */}
+                    {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-end">
                       <QuoteNowButton itemName={millet.name} />
                     </div>

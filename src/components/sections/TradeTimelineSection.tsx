@@ -45,7 +45,7 @@ export const TradeTimelineSection: React.FC = () => {
     <section className="py-20 bg-[#0A2540] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* HEADER */}
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
           <span className="text-xs font-extrabold uppercase tracking-widest text-[#D4AF37] bg-white/10 px-3 py-1 rounded-full inline-block border border-[#D4AF37]/30">
             Export Process Lifecycle
@@ -58,7 +58,7 @@ export const TradeTimelineSection: React.FC = () => {
           </p>
         </div>
 
-        {/* TIMELINE STEPS */}
+        {/* Timeline Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((item, idx) => (
             <div

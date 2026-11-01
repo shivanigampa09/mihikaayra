@@ -19,13 +19,13 @@ export const TestimonialsSection: React.FC = () => {
 
   return (
     <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
-      {/* BACKGROUND DECORATIVE GLOW */}
+      {/* Background Decorative Glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00B4D8]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
         
-        {/* CENTERED HEADER */}
+        {/* Centered Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-3 pb-4 border-b border-slate-800">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D4AF37]">
             <Heart className="w-3.5 h-3.5 fill-[#D4AF37]" />
@@ -39,10 +39,10 @@ export const TestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* RELATIVE SLIDER WRAPPER WITH EDGE ARROWS */}
+        {/* Relative Slider Wrapper With Edge Arrows */}
         <div className="relative group/slider px-2 sm:px-8">
           
-          {/* LEFT EDGE ARROW BUTTON */}
+          {/* Left Edge Arrow Button */}
           <button
             type="button"
             onClick={() => scroll('left')}
@@ -52,7 +52,7 @@ export const TestimonialsSection: React.FC = () => {
             <ChevronLeft className="w-6 h-6 text-[#D4AF37] group-hover/slider:text-white" />
           </button>
 
-          {/* RIGHT EDGE ARROW BUTTON */}
+          {/* Right Edge Arrow Button */}
           <button
             type="button"
             onClick={() => scroll('right')}

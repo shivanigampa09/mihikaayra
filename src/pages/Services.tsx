@@ -38,10 +38,10 @@ export const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* PROCESS TIMELINE */}
+      {/* Process Timeline */}
       <TradeTimelineSection />
 
-      {/* CTA */}
+      {/* Cta */}
       <CTASection />
     </div>
   );

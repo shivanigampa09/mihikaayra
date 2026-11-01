@@ -16,7 +16,7 @@ export const GalleryPopup: React.FC<GalleryPopupProps> = ({ item, onClose, onPre
     <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
       <div className="relative max-w-4xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex flex-col md:flex-row">
         
-        {/* CLOSE BUTTON */}
+        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-20 bg-black/60 hover:bg-black text-white p-2 rounded-full border border-white/20 transition-colors"
@@ -24,7 +24,7 @@ export const GalleryPopup: React.FC<GalleryPopupProps> = ({ item, onClose, onPre
           <X className="w-5 h-5" />
         </button>
 
-        {/* IMAGE PREVIEW AREA WITH NAVIGATION ARROWS */}
+        {/* Image Preview Area With Navigation Arrows */}
         <div className="relative md:w-2/3 bg-black flex items-center justify-center min-h-[300px] md:min-h-[450px]">
           <img
             src={item.image}
@@ -50,7 +50,7 @@ export const GalleryPopup: React.FC<GalleryPopupProps> = ({ item, onClose, onPre
           </button>
         </div>
 
-        {/* IMAGE DETAILS SIDEBAR */}
+        {/* Image Details Sidebar */}
         <div className="md:w-1/3 p-6 flex flex-col justify-between space-y-4 bg-[#0D3B66]">
           <div>
             <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#D4AF37] text-slate-950 mb-3">

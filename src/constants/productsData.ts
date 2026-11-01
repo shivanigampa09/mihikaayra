@@ -157,136 +157,6 @@ const milletSorghumPackImg = milletSorghumImg;
 
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
-    id: 'podies',
-    title: 'Powders & Spices',
-    subtitle: 'Traditional Gunpowder, Spices & Authentic Powders',
-    description: 'Freshly roasted Idli Podi, Karivepaku Podi, Kandi Podi, Garam Masala, Nalla Karam, Guntur Red Chillies, Turmeric, Black Pepper, Cloves, Cardamom, Cumin, and Coriander.',
-    image: podiesMainImg,
-    exportHighlights: ['Zero artificial flow agents or preservatives', 'Nitrogen-flushed aroma-lock pouches', 'Custom bulk and retail pack sizes'],
-    itemCount: 16,
-    hsCode: 'HS 0910 99 90'
-  },
-  {
-    id: 'pickles',
-    title: 'Pickles',
-    subtitle: 'Authentic Andhra & South Indian Pickle Craft',
-    description: 'Sun-cured Avakaya Mango, Gongura Leaf, Tomato, Amla, Lemon, Red Chilli, and Red Chilli Gongura pickles preserved in cold-pressed sesame oil.',
-    image: picklesMainImg,
-    exportHighlights: ['Leak-proof food-grade glass & pouch packaging', 'Non-GMO cold pressed oil base', 'Spicy, medium & mild regional variations', 'Strict microbiological safety tests'],
-    itemCount: 20,
-    hsCode: 'HS 2001 90 00'
-  },
-  {
-    id: 'sweets',
-    title: 'Sweets & Snacks',
-    subtitle: 'Authentic Indian Sweets, Savories, Murukulu & Cookies',
-    description: 'Traditional Indian sweet delicacies and crunchy savories crafted with pure Desi Ghee, Mahua flower extracts (Ippa Puvvu), Motichoor, Kaju Katli, Mysore Pak, Karam Boondi, Murukulu, Ribbon Pakoda, and Mixture.',
-    image: snacksMainImg,
-    exportHighlights: ['Extended shelf-life vacuum packing', 'USFDA & FSSAI certified export quality', 'Pure Desi Ghee & fresh crispy preparation', 'Custom gift export packing'],
-    itemCount: 10,
-    hsCode: 'HS 1704 90 90'
-  },
-  {
-    id: 'millets',
-    title: 'Millets',
-    subtitle: 'Ancient Superfood Grains & Flour Blends',
-    description: 'Unpolished Ragi (Finger Millet), Bajra (Pearl Millet), Jowar (Sorghum), Foxtail Millet, Kodo, and Little Millet rich in dietary fiber and essential minerals.',
-    image: milletsMainImg,
-    exportHighlights: ['100% unpolished gluten-free grains', 'NPOP & USDA Organic certified', 'Nitrogen-flushed retail pouch packing', 'High protein & low glycemic index'],
-    itemCount: 14,
-    hsCode: 'HS 1008 21 00'
-  },
-  {
-    id: 'jute-bags',
-    title: 'Jute Bags',
-    subtitle: 'Sustainable Natural Fiber Export Products',
-    description: '100% biodegradable golden jute totes, promotional carry bags, burlap gunny sacks, wine bottle holders, and luxury cotton-jute blended shopping bags.',
-    image: juteBagsMainImg,
-    exportHighlights: ['Custom logo screen & digital printing', 'Global eco-certification compliant', 'Heavy-duty stitching with bamboo/cotton handles', 'Bulk pallet container shipments'],
-    itemCount: 16,
-    hsCode: 'HS 4202 92 00'
-  },
-  {
-    id: 'honey',
-    title: 'Honey',
-    subtitle: 'Wild Forest & Multiflora Raw Honey',
-    description: 'Unfiltered, unpasteurized natural honey collected from wild forest bee hives and organic mustard, jamun, and acacia floral orchards across India.',
-    image: honeyMainImg,
-    exportHighlights: ['C4 C3 sugar & NMR lab tested 100% pure', 'Rich in natural pollen & enzymes', 'USFDA & FSSAI export certified'],
-    itemCount: 8,
-    hsCode: 'HS 0409 00 00'
-  },
-  {
-    id: 'fishes',
-    title: 'Seafood and Eggs and Meat',
-    subtitle: 'Premium Ocean Harvest, Fresh Meat & Poultry Eggs',
-    description: 'IQF Vannamei Prawns, Black Tiger Shrimp, King Fish, Fresh Country Mutton, Free-Range Farm Chicken, and Organic Poultry Eggs under strict cold chain logistics.',
-    image: prawnsImg,
-    exportHighlights: ['Sub-zero cold chain logistics', 'HACCP & BRC GS certified seafood processing', 'Fresh certified meat & egg export packing', 'Air & sea container reefer export'],
-    itemCount: 18,
-    hsCode: 'HS 0306 17 90'
-  },
-  {
-    id: 'dry-fruits',
-    title: 'Dry Fruits',
-    subtitle: 'Rich Cashews, Almonds, Pistachios & Raisins',
-    description: 'Grade W180 / W240 Jumbo Cashews, Kashmiri Almonds, Afghan Anjeer, Dried Dates, and Organic Walnuts sorted and nitrogen-packed for premium global export.',
-    image: dryfruitsMainImg,
-    exportHighlights: ['Strict size grading & moisture control', 'Nitrogen-flushed foil packs', 'Bulk 10kg master cartons'],
-    itemCount: 14,
-    hsCode: 'HS 0801 32 00'
-  },
-  {
-    id: 'cosmetics',
-    title: 'Herbal Cosmetics',
-    subtitle: 'Ayurvedic Wellness Powders, Oils & Herbal Soaps',
-    description: '100% pure herbal hair care powders (Bringraj, Amla, Shikakai), cold-pressed castor & sesame oils, organic face clays, and handcrafted herbal bathing bars.',
-    image: cosmeticsMainImg,
-    exportHighlights: ['GMP & ISO 22716 certified manufacturing', 'Cruelty-free & 100% vegan formulation', 'COA (Certificate of Analysis) provided', 'Custom private label export manufacturing'],
-    itemCount: 22,
-    hsCode: 'HS 3304 99 90'
-  },
-  {
-    id: 'handcraft',
-    title: 'Hand Crafts',
-    subtitle: 'Hand-Carved Wooden, Brass & Terracotta Crafts',
-    description: 'Traditional Kondapalli wooden toys, brass lamps, handcrafted rosewood decor items, and terracotta art decor carved by master Indian artisans.',
-    image: handcraftMainImg,
-    exportHighlights: ['GI-Tagged Indian handicrafts', 'Custom packaging for fragile artifacts', 'Worldwide door-to-door delivery'],
-    itemCount: 12,
-    hsCode: 'HS 4420 10 00'
-  },
-  {
-    id: 'textiles',
-    title: 'Fabrics',
-    subtitle: 'Pure Cotton, Silk Sarees & Home Linens',
-    description: 'Handwoven Mangalagiri cotton fabrics, Pochampally Ikat silks, organic cotton bed linens, embroidered dupattas, and luxury interior upholstery fabrics.',
-    image: fabricsMainImg,
-    exportHighlights: ['Azo-free natural dyeing', 'Authentic handloom weaver certification', 'Custom garment and linen roll export'],
-    itemCount: 18,
-    hsCode: 'HS 5208 11 00'
-  },
-  {
-    id: 'gaming-products',
-    title: 'Gaming',
-    subtitle: 'Artisanal Wooden Craft Games & Modern Accessories',
-    description: 'Handcrafted rosewood chess sets, traditional Ashtapada & Chaupar boards, precision wooden dice, ergonomic gaming equipment and custom board game sets.',
-    image: gamingMainImg,
-    exportHighlights: ['Premium seasoned Sheesham & Rosewood', 'FSC certified sustainable wood sourcing', 'Custom velvet & leatherette presentation cases', 'Precision weight balance'],
-    itemCount: 12,
-    hsCode: 'HS 9504 90 90'
-  },
-  {
-    id: 'interiors',
-    title: 'Home & Commercial Interiors',
-    subtitle: 'Architectural Stone, Carved Panels & Decor',
-    description: 'Hand-carved marble panels, teak furniture accents, brass door handles, decorative wall panels, and bespoke hotel interior furnishings.',
-    image: interiorsMainImg,
-    exportHighlights: ['Custom architectural CAD fabrication', 'Plywood crate export packing', 'Catering to luxury resorts & villas'],
-    itemCount: 10,
-    hsCode: 'HS 9403 60 00'
-  },
-  {
     id: 'automobiles',
     title: 'Auto Mobile',
     subtitle: 'Commercial Vehicles, E-Mobility & Spare Parts',
@@ -325,6 +195,136 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     exportHighlights: ['ASTM, DIN & ISO 9001 quality standards', 'Full chemical test report & MTC certification', 'Seaworthy protective pallet export packing'],
     itemCount: 12,
     hsCode: 'HS 7228 30 90'
+  },
+  {
+    id: 'gaming-products',
+    title: 'Gaming',
+    subtitle: 'Artisanal Wooden Craft Games & Modern Accessories',
+    description: 'Handcrafted rosewood chess sets, traditional Ashtapada & Chaupar boards, precision wooden dice, ergonomic gaming equipment and custom board game sets.',
+    image: gamingMainImg,
+    exportHighlights: ['Premium seasoned Sheesham & Rosewood', 'FSC certified sustainable wood sourcing', 'Custom velvet & leatherette presentation cases', 'Precision weight balance'],
+    itemCount: 12,
+    hsCode: 'HS 9504 90 90'
+  },
+  {
+    id: 'interiors',
+    title: 'Home & Commercial Interiors',
+    subtitle: 'Architectural Stone, Carved Panels & Decor',
+    description: 'Hand-carved marble panels, teak furniture accents, brass door handles, decorative wall panels, and bespoke hotel interior furnishings.',
+    image: interiorsMainImg,
+    exportHighlights: ['Custom architectural CAD fabrication', 'Plywood crate export packing', 'Catering to luxury resorts & villas'],
+    itemCount: 10,
+    hsCode: 'HS 9403 60 00'
+  },
+  {
+    id: 'textiles',
+    title: 'Fabrics',
+    subtitle: 'Pure Cotton, Silk Sarees & Home Linens',
+    description: 'Handwoven Mangalagiri cotton fabrics, Pochampally Ikat silks, organic cotton bed linens, embroidered dupattas, and luxury interior upholstery fabrics.',
+    image: fabricsMainImg,
+    exportHighlights: ['Azo-free natural dyeing', 'Authentic handloom weaver certification', 'Custom garment and linen roll export'],
+    itemCount: 18,
+    hsCode: 'HS 5208 11 00'
+  },
+  {
+    id: 'handcraft',
+    title: 'Hand Crafts',
+    subtitle: 'Hand-Carved Wooden, Brass & Terracotta Crafts',
+    description: 'Traditional Kondapalli wooden toys, brass lamps, handcrafted rosewood decor items, and terracotta art decor carved by master Indian artisans.',
+    image: handcraftMainImg,
+    exportHighlights: ['GI-Tagged Indian handicrafts', 'Custom packaging for fragile artifacts', 'Worldwide door-to-door delivery'],
+    itemCount: 12,
+    hsCode: 'HS 4420 10 00'
+  },
+  {
+    id: 'cosmetics',
+    title: 'Herbal Cosmetics',
+    subtitle: 'Ayurvedic Wellness Powders, Oils & Herbal Soaps',
+    description: '100% pure herbal hair care powders (Bringraj, Amla, Shikakai), cold-pressed castor & sesame oils, organic face clays, and handcrafted herbal bathing bars.',
+    image: cosmeticsMainImg,
+    exportHighlights: ['GMP & ISO 22716 certified manufacturing', 'Cruelty-free & 100% vegan formulation', 'COA (Certificate of Analysis) provided', 'Custom private label export manufacturing'],
+    itemCount: 22,
+    hsCode: 'HS 3304 99 90'
+  },
+  {
+    id: 'dry-fruits',
+    title: 'Dry Fruits',
+    subtitle: 'Rich Cashews, Almonds, Pistachios & Raisins',
+    description: 'Grade W180 / W240 Jumbo Cashews, Kashmiri Almonds, Afghan Anjeer, Dried Dates, and Organic Walnuts sorted and nitrogen-packed for premium global export.',
+    image: dryfruitsMainImg,
+    exportHighlights: ['Strict size grading & moisture control', 'Nitrogen-flushed foil packs', 'Bulk 10kg master cartons'],
+    itemCount: 14,
+    hsCode: 'HS 0801 32 00'
+  },
+  {
+    id: 'fishes',
+    title: 'Seafood',
+    subtitle: 'Premium Ocean Harvest, Fresh Meat & Poultry Eggs',
+    description: 'IQF Vannamei Prawns, Black Tiger Shrimp, King Fish, Fresh Country Mutton, Free-Range Farm Chicken, and Organic Poultry Eggs under strict cold chain logistics.',
+    image: prawnsImg,
+    exportHighlights: ['Sub-zero cold chain logistics', 'HACCP & BRC GS certified seafood processing', 'Fresh certified meat & egg export packing', 'Air & sea container reefer export'],
+    itemCount: 18,
+    hsCode: 'HS 0306 17 90'
+  },
+  {
+    id: 'honey',
+    title: 'Honey',
+    subtitle: 'Wild Forest & Multiflora Raw Honey',
+    description: 'Unfiltered, unpasteurized natural honey collected from wild forest bee hives and organic mustard, jamun, and acacia floral orchards across India.',
+    image: honeyMainImg,
+    exportHighlights: ['C4 C3 sugar & NMR lab tested 100% pure', 'Rich in natural pollen & enzymes', 'USFDA & FSSAI export certified'],
+    itemCount: 8,
+    hsCode: 'HS 0409 00 00'
+  },
+  {
+    id: 'millets',
+    title: 'Millets',
+    subtitle: 'Ancient Superfood Grains & Flour Blends',
+    description: 'Unpolished Ragi (Finger Millet), Bajra (Pearl Millet), Jowar (Sorghum), Foxtail Millet, Kodo, and Little Millet rich in dietary fiber and essential minerals.',
+    image: milletsMainImg,
+    exportHighlights: ['100% unpolished gluten-free grains', 'NPOP & USDA Organic certified', 'Nitrogen-flushed retail pouch packing', 'High protein & low glycemic index'],
+    itemCount: 14,
+    hsCode: 'HS 1008 21 00'
+  },
+  {
+    id: 'sweets',
+    title: 'Sweets & Snacks',
+    subtitle: 'Authentic Indian Sweets, Savories, Murukulu & Cookies',
+    description: 'Traditional Indian sweet delicacies and crunchy savories crafted with pure Desi Ghee, Mahua flower extracts (Ippa Puvvu), Motichoor, Kaju Katli, Mysore Pak, Karam Boondi, Murukulu, Ribbon Pakoda, and Mixture.',
+    image: snacksMainImg,
+    exportHighlights: ['Extended shelf-life vacuum packing', 'USFDA & FSSAI certified export quality', 'Pure Desi Ghee & fresh crispy preparation', 'Custom gift export packing'],
+    itemCount: 10,
+    hsCode: 'HS 1704 90 90'
+  },
+  {
+    id: 'pickles',
+    title: 'Pickles',
+    subtitle: 'Authentic Andhra & South Indian Pickle Craft',
+    description: 'Sun-cured Avakaya Mango, Gongura Leaf, Tomato, Amla, Lemon, Red Chilli, and Red Chilli Gongura pickles preserved in cold-pressed sesame oil.',
+    image: picklesMainImg,
+    exportHighlights: ['Leak-proof food-grade glass & pouch packaging', 'Non-GMO cold pressed oil base', 'Spicy, medium & mild regional variations', 'Strict microbiological safety tests'],
+    itemCount: 20,
+    hsCode: 'HS 2001 90 00'
+  },
+  {
+    id: 'podies',
+    title: 'Powders & Spices',
+    subtitle: 'Traditional Gunpowder, Spices & Authentic Powders',
+    description: 'Freshly roasted Idli Podi, Karivepaku Podi, Kandi Podi, Garam Masala, Nalla Karam, Guntur Red Chillies, Turmeric, Black Pepper, Cloves, Cardamom, Cumin, and Coriander.',
+    image: podiesMainImg,
+    exportHighlights: ['Zero artificial flow agents or preservatives', 'Nitrogen-flushed aroma-lock pouches', 'Custom bulk and retail pack sizes'],
+    itemCount: 16,
+    hsCode: 'HS 0910 99 90'
+  },
+  {
+    id: 'jute-bags',
+    title: 'Jute Bags',
+    subtitle: 'Sustainable Natural Fiber Export Products',
+    description: '100% biodegradable golden jute totes, promotional carry bags, burlap gunny sacks, wine bottle holders, and luxury cotton-jute blended shopping bags.',
+    image: juteBagsMainImg,
+    exportHighlights: ['Custom logo screen & digital printing', 'Global eco-certification compliant', 'Heavy-duty stitching with bamboo/cotton handles', 'Bulk pallet container shipments'],
+    itemCount: 16,
+    hsCode: 'HS 4202 92 00'
   }
 ];
 

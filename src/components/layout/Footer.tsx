@@ -18,12 +18,12 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0B132B] text-slate-300 pt-14 pb-8 relative overflow-hidden font-sans">
       
-      {/* DECORATIVE BACKGROUND */}
+      {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* MAIN FOOTER GRID */}
+        {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-10 border-b border-slate-800">
           
           {/* BRAND COLUMN (5 COLS) */}
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
             </h4>
             
             <div className="space-y-3.5 text-xs text-slate-300">
-              {/* GOOGLE MAPS LOCATION LINK */}
+              {/* Google Maps Location Link */}
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Kothur+jenda+kumarpally+market+Hanamkonda+506001"
                 target="_blank"
@@ -98,13 +98,13 @@ export const Footer: React.FC = () => {
                 </span>
               </div>
 
-              {/* EMAIL */}
+              {/* Email */}
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#38BDF8] flex-shrink-0" />
                 <span>Email: <a href="mailto:info@mihikaayra.com" className="hover:text-white font-mono font-medium">info@mihikaayra.com</a></span>
               </div>
               
-              {/* SOCIAL MEDIA LINKS */}
+              {/* Social Media Links */}
               <div className="pt-3 border-t border-slate-700/50 flex gap-3 mt-2">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#38BDF8] hover:text-slate-900 transition-colors" title="Facebook">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -124,7 +124,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* BOTTOM COPYRIGHT ROW */}
+        {/* Bottom Copyright Row */}
         <div className="pt-6 flex flex-col items-center justify-center text-xs text-slate-300 gap-1 text-center">
           <p className="text-xs sm:text-sm font-medium text-slate-300 tracking-wider">
             Mihika Ayra © 2026 All Rights Reserved
@@ -153,7 +153,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="space-y-3 pt-2">
-              {/* CALL BUTTON */}
+              {/* Call Button */}
               <a
                 href="tel:7013258972"
                 onClick={() => setShowPhoneModal(false)}
@@ -163,7 +163,7 @@ export const Footer: React.FC = () => {
                 <span>Call +91 70132 58972</span>
               </a>
 
-              {/* WHATSAPP BUTTON */}
+              {/* Whatsapp Button */}
               <a
                 href="https://wa.me/917013258972"
                 target="_blank"

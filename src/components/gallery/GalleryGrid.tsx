@@ -31,7 +31,7 @@ export const GalleryGrid: React.FC = () => {
   return (
     <div className="space-y-8">
       
-      {/* FILTER BUTTONS ROW */}
+      {/* Filter Buttons Row */}
       <div className="flex flex-wrap items-center justify-center gap-2">
         {filters.map(filter => (
           <button
@@ -48,7 +48,7 @@ export const GalleryGrid: React.FC = () => {
         ))}
       </div>
 
-      {/* MASONRY GALLERY GRID */}
+      {/* Masonry Gallery Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map((item, index) => (
           <div
@@ -63,7 +63,7 @@ export const GalleryGrid: React.FC = () => {
               loading="lazy"
             />
 
-            {/* OVERLAY ON HOVER */}
+            {/* Overlay On Hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D3B66]/90 via-[#0D3B66]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity p-5 flex flex-col justify-between text-white">
               <div className="flex items-center justify-between">
                 <span className="bg-[#D4AF37] text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow">
@@ -89,7 +89,7 @@ export const GalleryGrid: React.FC = () => {
         ))}
       </div>
 
-      {/* LIGHTBOX POPUP MODAL */}
+      {/* Lightbox Popup Modal */}
       <GalleryPopup
         item={activeItem}
         onClose={() => setActiveItemIndex(null)}

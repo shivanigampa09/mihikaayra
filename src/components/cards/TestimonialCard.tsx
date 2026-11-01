@@ -12,7 +12,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial })
       <Quote className="absolute top-6 right-6 w-10 h-10 text-slate-700/60 group-hover:text-[#D4AF37]/20 transition-colors fill-current pointer-events-none" />
 
       <div className="relative z-10 space-y-4">
-        {/* RATING STARS */}
+        {/* Rating Stars */}
         <div className="flex items-center space-x-1">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star
@@ -22,7 +22,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial })
           ))}
         </div>
 
-        {/* COMMENT TEXT */}
+        {/* Comment Text */}
         <p className="text-xs sm:text-sm text-slate-200 leading-relaxed italic font-light">
           "{testimonial.comment}"
         </p>

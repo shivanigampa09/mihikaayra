@@ -50,10 +50,10 @@ export default function App() {
         <ScrollToTop />
         <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-[#0077B6] selection:text-white">
           
-          {/* STICKY MAIN NAVBAR */}
+          {/* Sticky Main Navbar */}
           <Navbar />
 
-          {/* ROUTED CONTENT */}
+          {/* Routed Content */}
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -93,7 +93,11 @@ export default function App() {
               <Route path="/engineering" element={<EngineeringMaterialsPage />} />
               <Route path="/services" element={<Services />} />
               <Route path="/import" element={<ImportServices />} />
+              <Route path="/imports" element={<ImportServices />} />
+              <Route path="/import-services" element={<ImportServices />} />
               <Route path="/export" element={<ExportServices />} />
+              <Route path="/exports" element={<ExportServices />} />
+              <Route path="/export-services" element={<ExportServices />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -105,13 +109,13 @@ export default function App() {
             </Routes>
           </main>
 
-          {/* FOOTER */}
+          {/* Footer */}
           <Footer />
 
-          {/* FLOATING ACTION BUTTONS */}
+          {/* Floating Action Buttons */}
           <FloatingButtons />
 
-          {/* MODAL OVERLAYS */}
+          {/* Modal Overlays */}
           <QuoteModal />
           <SearchModal />
           <AuthModal />

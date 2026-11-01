@@ -9,7 +9,7 @@ export const ContactSection: React.FC = () => {
     <section className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* HEADER */}
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <span className="text-xs font-extrabold uppercase tracking-widest text-[#0077B6] bg-[#0077B6]/10 px-3 py-1 rounded-full inline-block">
             Get in Touch
@@ -96,7 +96,7 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* EMBEDDED GOOGLE MAP */}
+            {/* Embedded Google Map */}
             <div className="pt-4 relative z-10">
               <span className="text-[11px] font-bold text-slate-300 block mb-2">Location Map (Aziz Nagar):</span>
               <div className="rounded-xl overflow-hidden border border-white/20 h-44 shadow-md">

@@ -58,14 +58,14 @@ export const WhyChooseUsSection: React.FC = () => {
     <section className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* HEADER */}
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0D3B66] tracking-tight">
             Why Choose Mihika Ayra
           </h2>
         </div>
 
-        {/* FEATURES GRID */}
+        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feat, idx) => (
             <FeatureCard

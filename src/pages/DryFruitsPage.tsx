@@ -118,7 +118,7 @@ export const DryFruitsPage: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          {/* CATEGORY FILTER PILLS */}
+          {/* Category Filter Pills */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-md space-y-3">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
               Filter by Dry Fruit Variety ({dryFruitsList.length} Items):
@@ -150,14 +150,14 @@ export const DryFruitsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* DRY FRUITS CARDS LIST */}
+          {/* Dry Fruits Cards List */}
           <div className="space-y-8">
             {filteredList.map(item => (
               <div
                 key={item.id}
                 className="bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-stretch"
               >
-                {/* COMPACT LEFT IMAGE COLUMN */}
+                {/* Compact Left Image Column */}
                 <div className="w-full md:w-64 lg:w-72 shrink-0 relative h-52 md:h-auto overflow-hidden bg-slate-100 flex items-center justify-center p-3">
                   <img
                     src={item.image}
@@ -167,18 +167,18 @@ export const DryFruitsPage: React.FC = () => {
                   />
                 </div>
 
-                {/* RIGHT CONTENT COLUMN */}
+                {/* Right Content Column */}
                 <div className="flex-1 p-6 sm:p-7 space-y-5 flex flex-col justify-between">
                   <div className="space-y-4">
                     
-                    {/* TITLE */}
+                    {/* Title */}
                     <div>
                       <h2 className="text-2xl font-bold font-serif text-[#031322] leading-tight">
                         {item.name}
                       </h2>
                     </div>
 
-                    {/* MANUFACTURING PROCESS TEXT BOX */}
+                    {/* Manufacturing Process Text Box */}
                     <div className="bg-[#F8FAFC] rounded-2xl p-4.5 border border-slate-200 space-y-2">
                       <h4 className="text-xs font-bold text-[#0D3B66] uppercase tracking-wider flex items-center gap-2">
                         <Factory className="w-4 h-4 text-[#0077B6]" />
@@ -189,7 +189,7 @@ export const DryFruitsPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* INGREDIENTS LIST */}
+                    {/* Ingredients List */}
                     <div className="space-y-2">
                       <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                         Raw Variety & Grade:
@@ -203,7 +203,7 @@ export const DryFruitsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* PURPOSE OF INGREDIENTS */}
+                    
                     <div className="bg-[#FFFBEB] rounded-2xl p-4 border border-amber-200/80 space-y-1.5">
                       <h4 className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-amber-600" />
@@ -214,7 +214,7 @@ export const DryFruitsPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* ACTION BUTTONS */}
+                    {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-end">
                       <QuoteNowButton itemName={item.name} />
                     </div>

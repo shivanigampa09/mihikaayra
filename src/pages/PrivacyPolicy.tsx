@@ -18,7 +18,7 @@ export const PrivacyPolicy: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-8 sm:p-12 space-y-10">
           
-          {/* HEADER SUMMARY BADGE */}
+          {/* Header Summary Badge */}
           <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="p-3 bg-[#0D3B66] text-[#D4AF37] rounded-xl shrink-0">
               <ShieldCheck className="w-8 h-8" />

@@ -17,8 +17,8 @@ interface MedicalItem {
   name: string;
   image: string;
   manufacturingProcess: string;
-  ingredients: string[];
-  purposeOfIngredients: string;
+  specifications: string[];
+  clinicalUtility: string;
 }
 
 export const MedicalMaterialsPage: React.FC = () => {
@@ -30,48 +30,48 @@ export const MedicalMaterialsPage: React.FC = () => {
       name: 'Precision Surgical Instruments & Stainless Steel Tools',
       image: medicalMainImg,
       manufacturingProcess: 'Forged from surgical-grade AISI 316L stainless steel, precision CNC machined, vacuum heat-treated for extreme hardness, passivated to resist corrosion, and 100% laser-inspected for microscopic dimensional accuracy.',
-      ingredients: ['AISI 316L Surgical Stainless Steel', 'Titanium Alloy Coating', 'Passivation Layer'],
-      purposeOfIngredients: 'Ensures bio-compatibility, zero rust or oxidation under autoclave sterilization, ultra-sharp cutting edges, and lifetime durability in operating theaters.'
+      specifications: ['AISI 316L Surgical Stainless Steel', 'Titanium Alloy Coating', 'Passivation Layer'],
+      clinicalUtility: 'Ensures bio-compatibility, zero rust or oxidation under autoclave sterilization, ultra-sharp cutting edges, and lifetime durability in operating theaters.'
     },
     {
       id: 'nitrile-gloves',
       name: 'Medical Grade Powder-Free Nitrile Examination Gloves',
       image: nitrileGlovesImg,
       manufacturingProcess: 'Formulated using synthetic acrylonitrile butadiene latex dipped on ergonomic ceramic hand molds, double-chlorinated for powder-free smooth donning, and 100% water-leak tested to ISO 13485 standards.',
-      ingredients: ['100% Synthetic Nitrile Rubber', 'Polymer Coating', 'Zinc Oxide Accelerator', 'Titanium Dioxide'],
-      purposeOfIngredients: 'Eliminates Type I latex allergy risks while delivering high tactile sensitivity, superior puncture resistance, and chemical protection against pathogens.'
+      specifications: ['100% Synthetic Nitrile Rubber', 'Polymer Coating', 'Zinc Oxide Accelerator', 'Titanium Dioxide'],
+      clinicalUtility: 'Eliminates Type I latex allergy risks while delivering high tactile sensitivity, superior puncture resistance, and chemical protection against pathogens.'
     },
     {
       id: 'wound-care-dressings',
       name: 'Advanced Hydrocolloid & Alginate Wound Dressings',
       image: woundDressingsImg,
       manufacturingProcess: 'Sodium carboxymethylcellulose particles incorporated into a cohesive elastic polymer matrix or woven from natural sea-kelp alginate fibers, gamma-ray sterilized, and foil blister packed.',
-      ingredients: ['Sodium Carboxymethylcellulose', 'Calcium Alginate Fibers', 'Polyurethane Breathable Backing Film', 'Ionic Silver (Ag+)'],
-      purposeOfIngredients: 'Maintains an optimal moist healing environment, absorbs high exuding fluid, and ionic silver provides continuous antimicrobial barrier against infection.'
+      specifications: ['Sodium Carboxymethylcellulose', 'Calcium Alginate Fibers', 'Polyurethane Breathable Backing Film', 'Ionic Silver (Ag+)'],
+      clinicalUtility: 'Maintains an optimal moist healing environment, absorbs high exuding fluid, and ionic silver provides continuous antimicrobial barrier against infection.'
     },
     {
       id: 'orthopedic-implants',
       name: 'Biocompatible Titanium Orthopedic Implants & Bone Plates',
       image: orthopedicImplantsImg,
       manufacturingProcess: 'Precision 5-axis CNC machined from Ti-6Al-4V ELI titanium alloy, surface anodized or hydroxyapatite-coated for osseointegration, and cleanroom packed under ISO Class 7 conditions.',
-      ingredients: ['Ti-6Al-4V ELI Titanium Alloy', 'Hydroxyapatite Bio-active Coating', 'Pure Cobalt-Chromium Alloy'],
-      purposeOfIngredients: 'Matches bone mechanical elasticity to prevent stress shielding, accelerates bone cell adhesion, and guarantees human body biocompatibility.'
+      specifications: ['Ti-6Al-4V ELI Titanium Alloy', 'Hydroxyapatite Bio-active Coating', 'Pure Cobalt-Chromium Alloy'],
+      clinicalUtility: 'Matches bone mechanical elasticity to prevent stress shielding, accelerates bone cell adhesion, and guarantees human body biocompatibility.'
     },
     {
       id: 'medical-tubing',
       name: 'High-Purity Silicon & PVC Medical Grade Tubing',
       image: medicalTubingImg,
       manufacturingProcess: 'Extruded in certified ISO Class 8 cleanrooms using platinum-cured liquid silicone rubber, radio-opaque stripe co-extruded for X-ray visibility, and ethylene oxide (EtO) sterilized.',
-      ingredients: ['100% Platinum-Cured Silicone', 'Phthalate-Free Medical Grade PVC', 'Barium Sulfate (Radio-opaque)'],
-      purposeOfIngredients: 'Prevents chemical leaching into fluids, resists kinking during catheterization, and allows clear X-ray tracking inside patient bodies.'
+      specifications: ['100% Platinum-Cured Silicone', 'Phthalate-Free Medical Grade PVC', 'Barium Sulfate (Radio-opaque)'],
+      clinicalUtility: 'Prevents chemical leaching into fluids, resists kinking during catheterization, and allows clear X-ray tracking inside patient bodies.'
     },
     {
       id: 'ppe-coveralls',
       name: 'Impermeable Isolation Gowns & Medical PPE Coveralls',
       image: ppeCoverallsImg,
       manufacturingProcess: 'Ultrasonically welded non-woven SMS (Spunbond-Meltblown-Spunbond) polypropylene bonded with a micro-porous breathable PE film, meeting AAMI Level 4 fluid barrier requirements.',
-      ingredients: ['SMS Polypropylene Non-Woven Fabric', 'PE Micro-porous Membrane', 'Anti-Static Coating'],
-      purposeOfIngredients: 'Provides 100% fluid and blood-borne pathogen barrier while allowing body heat moisture vapor to escape for surgeon comfort.'
+      specifications: ['SMS Polypropylene Non-Woven Fabric', 'PE Micro-porous Membrane', 'Anti-Static Coating'],
+      clinicalUtility: 'Provides 100% fluid and blood-borne pathogen barrier while allowing body heat moisture vapor to escape for surgeon comfort.'
     }
   ];
 
@@ -91,7 +91,7 @@ export const MedicalMaterialsPage: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          {/* CATEGORY SELECTOR BAR */}
+          {/* Category Selector Bar */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-md space-y-3">
             <div className="flex items-center gap-2">
               <Stethoscope className="w-5 h-5 text-[#0077B6]" />
@@ -126,14 +126,14 @@ export const MedicalMaterialsPage: React.FC = () => {
             </div>
           </div>
 
-          {/* MEDICAL ITEMS GRID */}
+          {/* Medical Items Grid */}
           <div className="space-y-8">
             {filteredItems.map(item => (
               <div 
                 key={item.id}
                 className="bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-stretch"
               >
-                {/* PRODUCT IMAGE CONTAINER */}
+                {/* Product Image Container */}
                 <div className="w-full md:w-[380px] lg:w-[440px] shrink-0 relative h-72 md:h-auto min-h-[300px] md:min-h-[360px] overflow-hidden bg-slate-50 flex items-center justify-center p-4">
                   <img 
                     src={item.image} 
@@ -143,11 +143,11 @@ export const MedicalMaterialsPage: React.FC = () => {
                   />
                 </div>
 
-                {/* CONTENT CONTAINER */}
+                {/* Content Container */}
                 <div className="flex-1 p-6 sm:p-7 space-y-5 flex flex-col justify-between">
                   <div className="space-y-4">
                     
-                    {/* TITLE */}
+                    {/* Title */}
                     <div className="flex items-start justify-between gap-4">
                       <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#031322] leading-tight">
                         {item.name}
@@ -157,7 +157,7 @@ export const MedicalMaterialsPage: React.FC = () => {
                       </span>
                     </div>
 
-                    {/* MANUFACTURING PROCESS TEXT BOX */}
+                    {/* Manufacturing Process Text Box */}
                     <div className="bg-[#F8FAFC] rounded-2xl p-4 border border-slate-200 space-y-2">
                       <h4 className="text-xs font-bold text-[#0D3B66] uppercase tracking-wider flex items-center gap-2">
                         <Factory className="w-4 h-4 text-[#0077B6]" />
@@ -174,7 +174,7 @@ export const MedicalMaterialsPage: React.FC = () => {
                         Material Composition & Standards:
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
-                        {item.ingredients.map((ing, i) => (
+                        {item.specifications.map((ing, i) => (
                           <span key={i} className="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg font-medium border border-slate-200">
                             {ing}
                           </span>
@@ -182,18 +182,18 @@ export const MedicalMaterialsPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* PURPOSE OF MATERIALS */}
+                    {/* Purpose Of Materials */}
                     <div className="bg-[#E0F2FE] rounded-2xl p-4 border border-sky-200 space-y-1.5">
                       <h4 className="text-xs font-bold text-[#0369A1] uppercase tracking-wider flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-[#0284C7]" />
                         Clinical Purpose & Efficacy:
                       </h4>
                       <p className="text-xs text-slate-700 leading-relaxed font-sans">
-                        {item.purposeOfIngredients}
+                        {item.clinicalUtility}
                       </p>
                     </div>
 
-                    {/* ACTION BUTTONS */}
+                    {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-end">
                       <QuoteNowButton itemName={item.name} />
                     </div>

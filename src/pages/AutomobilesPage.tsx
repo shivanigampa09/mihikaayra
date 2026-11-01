@@ -17,8 +17,8 @@ interface AutoItem {
   name: string;
   image: string;
   manufacturingProcess: string;
-  ingredients: string[];
-  purposeOfIngredients: string;
+  specifications: string[];
+  application: string;
 }
 
 export const AutomobilesPage: React.FC = () => {
@@ -30,48 +30,48 @@ export const AutomobilesPage: React.FC = () => {
       name: 'Heavy Commercial Cargo Trucks & Tippers',
       image: imgCargoTrucks,
       manufacturingProcess: 'High-tensile steel chassis frame welding, turbocharged common-rail diesel engine integration, ABS pneumatic braking systems, and ergonomic sleeper cabs compliant with Euro VI / BS6 emission norms.',
-      ingredients: ['High-Strength Structural Steel Chassis', 'Common Rail Diesel Engine Assembly', 'Pneumatic Air Brakes & ABS'],
-      purposeOfIngredients: 'Engineered for long-haul freight distribution, mining operations, heavy logistics, and reliable multi-terrain cargo transport.'
+      specifications: ['High-Strength Structural Steel Chassis', 'Common Rail Diesel Engine Assembly', 'Pneumatic Air Brakes & ABS'],
+      application: 'Engineered for long-haul freight distribution, mining operations, heavy logistics, and reliable multi-terrain cargo transport.'
     },
     {
       id: 'electric-two-wheelers',
       name: 'High-Speed Electric Scooters & E-Motorcycles',
       image: imgScooters,
       manufacturingProcess: 'Lightweight aluminum alloy frame construction, IP67 waterproof lithium-ion battery pack assembly, BLDC hub motor integration, and smart IoT digital telematics dashboards.',
-      ingredients: ['IP67 Removable Li-ion Battery Pack', 'High-Torque BLDC Hub Motor', 'Regenerative Braking ECU Controller'],
-      purposeOfIngredients: 'Delivers zero-emission eco-friendly urban commuting, low operational costs, rapid charging capabilities, and quiet smooth acceleration.'
+      specifications: ['IP67 Removable Li-ion Battery Pack', 'High-Torque BLDC Hub Motor', 'Regenerative Braking ECU Controller'],
+      application: 'Delivers zero-emission eco-friendly urban commuting, low operational costs, rapid charging capabilities, and quiet smooth acceleration.'
     },
     {
       id: 'e-rickshaws',
       name: 'Passenger & Freight Cargo E-Rickshaws',
       image: imgRickshaws,
       manufacturingProcess: 'Heavy-duty tubular steel frame chassis, high-torque geared axle motors, deep-cycle lead-acid/LFP battery packs, and weather-proof fiber reinforced plastic (FRP) body roofs.',
-      ingredients: ['Heavy Tubular Steel Framework', 'High-Torque Differential Gear Axle', 'LFP Battery Pack with Smart BMS'],
-      purposeOfIngredients: 'Provides cost-effective last-mile urban passenger transit, commercial market delivery, and low-maintenance green transport.'
+      specifications: ['Heavy Tubular Steel Framework', 'High-Torque Differential Gear Axle', 'LFP Battery Pack with Smart BMS'],
+      application: 'Provides cost-effective last-mile urban passenger transit, commercial market delivery, and low-maintenance green transport.'
     },
     {
       id: 'auto-spare-parts',
       name: 'OEM Auto Spare Parts & Engine Components',
       image: imgSpareParts,
       manufacturingProcess: 'Precision CNC machining, induction hardening, and drop-forging of alloy steel pistons, crankshafts, brake rotors, clutch plates, and oil filters.',
-      ingredients: ['Forged Alloy Steel Components', 'Asbestos-Free Ceramic Friction Pads', 'Synthetic Rubber Gaskets & Seals'],
-      purposeOfIngredients: 'Ensures exact OEM fitment, high thermal endurance, reduced vehicle wear and tear, and maximum operational safety.'
+      specifications: ['Forged Alloy Steel Components', 'Asbestos-Free Ceramic Friction Pads', 'Synthetic Rubber Gaskets & Seals'],
+      application: 'Ensures exact OEM fitment, high thermal endurance, reduced vehicle wear and tear, and maximum operational safety.'
     },
     {
       id: 'tractors',
       name: 'Agricultural Tractors & Farm Implements',
       image: imgTractors,
       manufacturingProcess: 'Heavy diesel engine assembly paired with dual-clutch synchromesh gearboxes, 3-point hydraulic hitch linkage systems, and heavy-duty treaded tractor tires.',
-      ingredients: ['High-Torque Fuel Efficient Diesel Engine', 'Cat-II 3-Point Hydraulic Linkage', 'Heavy Steel Wheel Rims & Treaded Tires'],
-      purposeOfIngredients: 'Powers agricultural tillage, ploughing, seed drilling, crop hauling, and heavy-duty farm implement towing.'
+      specifications: ['High-Torque Fuel Efficient Diesel Engine', 'Cat-II 3-Point Hydraulic Linkage', 'Heavy Steel Wheel Rims & Treaded Tires'],
+      application: 'Powers agricultural tillage, ploughing, seed drilling, crop hauling, and heavy-duty farm implement towing.'
     },
     {
       id: 'batteries',
       name: 'Industrial & EV Automotive Batteries',
       image: imgBatteries,
       manufacturingProcess: 'High-purity lead calcium alloy grids or lithium iron phosphate (LiFePO4) cell stacking enclosed in shock-resistant polypropylene heat-sealed casings with integrated BMS.',
-      ingredients: ['High-Density LiFePO4 / Lead Calcium Cells', 'Smart Battery Management System (BMS)', 'Heat-Sealed Polypropylene Case'],
-      purposeOfIngredients: 'Provides reliable high-cranking cold amps, deep discharge cycle resistance, and long service life for commercial vehicles and ESS.'
+      specifications: ['High-Density LiFePO4 / Lead Calcium Cells', 'Smart Battery Management System (BMS)', 'Heat-Sealed Polypropylene Case'],
+      application: 'Provides reliable high-cranking cold amps, deep discharge cycle resistance, and long service life for commercial vehicles and ESS.'
     }
   ];
 
@@ -92,7 +92,7 @@ export const AutomobilesPage: React.FC = () => {
       <section className="py-12 bg-[#F8F9FA] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
-          {/* CATEGORY FILTER PILLS */}
+          {/* Category Filter Pills */}
           <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-md space-y-3">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
               Filter by Auto Mobile Category ({autoList.length} Categories):
@@ -131,7 +131,7 @@ export const AutomobilesPage: React.FC = () => {
                 key={item.id}
                 className="bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-stretch"
               >
-                {/* PRODUCT IMAGE CONTAINER */}
+                {/* Product Image Container */}
                 <div className="w-full md:w-64 lg:w-72 shrink-0 relative h-52 md:h-auto overflow-hidden bg-slate-100 flex items-center justify-center p-3">
                   <img 
                     src={item.image} 
@@ -141,11 +141,11 @@ export const AutomobilesPage: React.FC = () => {
                   />
                 </div>
 
-                {/* CONTENT CONTAINER */}
+                {/* Content Container */}
                 <div className="flex-1 p-6 sm:p-7 space-y-5 flex flex-col justify-between">
                   <div className="space-y-4">
                     
-                    {/* TITLE */}
+                    {/* Title */}
                     <div>
                       <h2 className="text-xl sm:text-2xl font-bold font-serif text-[#031322] leading-tight">
                         {item.name}
@@ -163,13 +163,13 @@ export const AutomobilesPage: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* KEY COMPONENT INGREDIENTS */}
+                    
                     <div className="space-y-2">
                       <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider">
                         Core Materials & Technical Components:
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
-                        {item.ingredients.map((ing, i) => (
+                        {item.specifications.map((ing, i) => (
                           <span key={i} className="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg font-medium border border-slate-200">
                             {ing}
                           </span>
@@ -177,18 +177,18 @@ export const AutomobilesPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* PURPOSE OF INGREDIENTS */}
+                    
                     <div className="bg-[#FFFBEB] rounded-2xl p-4 border border-amber-200/80 space-y-1.5">
                       <h4 className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-amber-600" />
                         Application & Global Utility:
                       </h4>
                       <p className="text-xs text-slate-700 leading-relaxed font-sans">
-                        {item.purposeOfIngredients}
+                        {item.application}
                       </p>
                     </div>
 
-                    {/* ACTION BUTTON */}
+                    {/* Action Button */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-end">
                       <QuoteNowButton itemName={item.name} />
                     </div>
