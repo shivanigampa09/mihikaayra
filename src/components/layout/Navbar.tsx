@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ChevronDown, User, ArrowUpRight, Package, ShieldCheck, Calendar, Truck, FileText, CheckCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, User, Package, Calendar, Truck, FileText, CheckCircle } from 'lucide-react';
 import { PRODUCT_CATEGORIES } from '../../constants/productsData';
 import { useQuote } from '../../context/QuoteContext';
 import { Logo } from '../common/Logo';

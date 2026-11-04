@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Factory, Sparkles } from 'lucide-react';
 import { QuoteNowButton } from '../components/common/QuoteNowButton';
-import { useQuote } from '../context/QuoteContext';
-
 import honeyMainImg from '../assets/images/honey.png';
-
-const organicHoneyImg = honeyMainImg;
-const honeyHeaderImg = honeyMainImg;
-const honeyJarImg = honeyMainImg;
 
 interface HoneyItem {
   id: string;
@@ -21,13 +15,12 @@ interface HoneyItem {
 
 export const HoneyPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('all');
-  const { openQuoteModal } = useQuote();
 
   const honeyList: HoneyItem[] = [
     {
       id: 'organic-honey',
       name: 'Organic Honey',
-      image: honeyJarImg,
+      image: honeyMainImg,
       manufacturingProcess: `Harvested from diverse floral sources across organic farmlands and wild forest bee hives. Minimally processed and unheated to preserve the diverse blend of enzymes, vitamins, and minerals. Filtered using natural methods to ensure purity without losing beneficial pollen.`,
       ingredients: [
         '100% Pure Organic Nectar',
@@ -46,7 +39,7 @@ export const HoneyPage: React.FC = () => {
       <PageHeader
         title="Pure Organic Honey"
         breadcrumbText="Organic Honey"
-        bgImage={honeyHeaderImg}
+        bgImage={honeyMainImg}
         compact={true}
       />
       <section className="py-12 bg-[#F8F9FA] min-h-screen">

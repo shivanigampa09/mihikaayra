@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, MapPin, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { GalleryItem } from '../../types';
 
 interface GalleryPopupProps {

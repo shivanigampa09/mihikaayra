@@ -1,16 +1,11 @@
 import React from 'react';
 import { PageHeader } from '../components/layout/PageHeader';
-import { ShieldCheck, Award, Target, Eye, Heart, Globe, Building2, CheckCircle2, ArrowRight } from 'lucide-react';
-import { COMPANY_INFO } from '../constants/companyInfo';
+import { Target, Eye, Heart, CheckCircle2 } from 'lucide-react';
 import { WhyChooseUsSection } from '../components/sections/WhyChooseUsSection';
 import { CTASection } from '../components/sections/CTASection';
 
-import bambooImg from "../assets/images/bamboo_products_1785757801080.jpg";
-import redChilliPowderImg from "../assets/images/black-pepper.jpeg";
-import woodenCraftsImg from "../assets/images/wooden_handicrafts_1785757750067.jpg";
-import prawnsImg from "../assets/images/prawns.jpeg";
-import aloeveraGelImg from "../assets/images/aloevera_gel.jpeg";
-import giftItemsImg from "../assets/images/gift_items_1785757932694.jpg";
+import bambooImg from '../assets/images/bamboo_products_1785757801080.jpg';
+import redChilliPowderImg from '../assets/images/black-pepper.jpeg';
 
 const aboutMihikaImg = redChilliPowderImg;
 const aboutBgImg = bambooImg;

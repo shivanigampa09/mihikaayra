@@ -1,31 +1,25 @@
 import { ProductCategory, ProductItem } from '../types';
 
-import mangoPickleImg from '../assets/images/mango_pickle_jar_1785663299589.jpg';
-import tomatoPickleImg from '../assets/images/tomato_pickle_jar_1785664055943.jpg';
-import gonguraPickleImg from '../assets/images/gongura_pickle_jar_1785664071317.jpg';
-import amlaPickleImg from '../assets/images/amla_pickle_jar_1785664087103.jpg';
-import lemonPickleImg from '../assets/images/lemon_pickle_jar_1785664100116.jpg';
-import redChilliPickleImg from '../assets/images/red_chilli_pickle_jar_1785664116974.jpg';
-import redChilliGonguraPickleImg from '../assets/images/red_chilli_gongura_pickle_jar_1785664132250.jpg';
+// Category Main Images
+import heavyCargoTrucksImg from '../assets/images/heavy_cargo_trucks_1786176219238.jpg';
+import industrialSolarPvImg from '../assets/images/industrial-solar-pv.jpg';
+import medicalSurgicalInstrumentsImg from '../assets/images/medical-surgical-instruments.jpg';
+import engineeringAlloySteelsImg from '../assets/images/engineering-alloy-steels.jpg';
+import categoryGamingImg from '../assets/images/category-gaming.png';
+import categoryInteriorsImg from '../assets/images/category-interiors.png';
+import categoryFabricsImg from '../assets/images/category-fabrics.png';
+import categoryHandcraftsImg from '../assets/images/category-handcrafts.png';
+import categoryCosmeticsImg from '../assets/images/category-cosmetics.png';
+import categoryDryFruitsImg from '../assets/images/category-dry-fruits.png';
+import prawnsImg from '../assets/images/prawns.jpeg';
+import honeyJarImg from '../assets/images/honey.png';
+import categoryMilletsImg from '../assets/images/category-millets.png';
+import categorySnacksImg from '../assets/images/category-snacks.png';
+import categoryPicklesImg from '../assets/images/category-pickles.jpeg';
+import categorySpicesPowdersImg from '../assets/images/category-spices-powders.jpeg';
+import categoryJuteBagsImg from '../assets/images/category-jute-bags.png';
 
-import almondBadamImg from '../assets/images/almond_badam_1785757421240.jpg';
-import cashewKajuImg from '../assets/images/cashew_kaju_1785757488672.jpg';
-import walnutImg from '../assets/images/walnut_1785757500657.jpg';
-import saltedPistaImg from '../assets/images/salted_pista_1785757512618.jpg';
-import normalPistaImg from '../assets/images/normal_pista_1785757526199.jpg';
-import kishmishRaisinsImg from '../assets/images/kishmish_raisins_1785757537929.jpg';
-import datesKhajurImg from '../assets/images/dates_khajur_1785757551389.jpg';
-import figsAnjeerImg from '../assets/images/figs_anjeer_1785757598949.jpg';
-import pumpkinSeedsImg from '../assets/images/pumpkin_seeds_1785757623611.jpg';
-
-import redChilliPowderImg from '../assets/images/black_pepper.svg';
-import nallaKaramImg from '../assets/images/nalla_karam_powder_1786093143622.jpg';
-import teaPowderImg from '../assets/images/tea_powder.svg';
-import turmericPowderImg from '../assets/images/turmeric_powder.svg';
-import toorDalImg from '../assets/images/toor_dal.svg';
-import sambarPowderImg from '../assets/images/sambar_powder.svg';
-import rasamPowderImg from '../assets/images/rasam_powder.svg';
-import kuraKaramImg from '../assets/images/kura-karam.png';
+// Product Items Images - Powders & Spices
 import redChillisImg from '../assets/images/red-chillies.jpeg';
 import turmericImg from '../assets/images/turmeric_whole.svg';
 import blackPepperImg from '../assets/images/black_pepper.svg';
@@ -34,126 +28,55 @@ import greenCardamomImg from '../assets/images/black_pepper.svg';
 import cinnamonImg from '../assets/images/black_pepper.svg';
 import cuminSeedsImg from '../assets/images/black_pepper.svg';
 import corianderSeedsImg from '../assets/images/black_pepper.svg';
+import redChilliPowderImg from '../assets/images/black_pepper.svg';
+import nallaKaramImg from '../assets/images/nalla_karam_powder_1786093143622.jpg';
+import teaPowderImg from '../assets/images/tea_powder.svg';
+import turmericPowderImg from '../assets/images/turmeric_powder.svg';
+import toorDalImg from '../assets/images/toor_dal.svg';
+import sambarPowderImg from '../assets/images/sambar_powder.svg';
+import rasamPowderImg from '../assets/images/rasam_powder.svg';
+import kuraKaramImg from '../assets/images/kura-karam.png';
 
-import aloeveraGelImg from '../assets/images/aloevera_gel.jpeg';
-import bodyLotionImg from '../assets/images/body_lotion_1785758298702.jpg';
-import conditionerImg from '../assets/images/conditioners_1.jpeg';
-import essentialOilsImg from '../assets/images/essential_oils.jpeg';
-import faceCreamImg from '../assets/images/face_cream.jpeg';
-import faceWashImg from '../assets/images/face_wash.jpeg';
-import hairOilImg from '../assets/images/hair_oil.jpeg';
-import herbalFacePackImg from '../assets/images/herbal_face_pack_1785758334205.jpg';
-import herbalShampooImg from '../assets/images/herbal_shampoo.jpeg';
-import lipBalmImg from '../assets/images/lip_balm_1785758280597.jpg';
-import neemFaceWashImg from '../assets/images/neem_face_wash.jpeg';
-import roseWaterImg from '../assets/images/rose_water.jpeg';
-import scrubsImg from '../assets/images/scrubs_1785758347691.jpg';
-import shampooImg from '../assets/images/shampoo.jpeg';
-import sunscreenImg from '../assets/images/sunscreen_1785758267808.jpg';
-import herbalSoapsImg from '../assets/images/herbal_soaps_product_1786092692549.jpg';
-import heavyCargoTrucksImg from '../assets/images/heavy_cargo_trucks_1786176219238.jpg';
-import industrialEvBatteriesImg from '../assets/images/industrial_ev_batteries_1786176288833.jpg';
-import autoSparePartsImg from '../assets/images/auto_spare_parts_1786176260166.jpg';
-import designerCurtainsImg from '../assets/images/designer_curtains_1786177444367.jpg';
-import gamingKeyboardImg from '../assets/images/gaming_keyboard_1786176304220.jpg';
-import honeyJarImg from '../assets/images/honey.png';
+// Product Items Images - Sweets & Snacks
+import mixtureImg from '../assets/images/mixture.png';
+import karamBoondiImg from '../assets/images/karam-boondi.png';
+import murukuluImg from '../assets/images/murukulu.png';
+import ribbonPakodaImg from '../assets/images/ribbon-pakoda.png';
+import mahuaCookiesImg from '../assets/images/mahua-cookies.png';
+import ippaPuvvuImg from '../assets/images/ippa-puvvu-laddu.png';
+import motichoorImg from '../assets/images/motichoor-laddu.png';
+import kajuKatliImg from '../assets/images/kaju-katli.png';
+import badushaImg from '../assets/images/badusha.png';
+import mysorePakImg from '../assets/images/mysore_pak.png';
 
-import woodenCraftsImg from '../assets/images/wooden_handicrafts_1785757750067.jpg';
-import brassCraftsImg from '../assets/images/brass_metal_crafts_1785757769226.jpg';
-import terracottaImg from '../assets/images/terracotta_items_1785757784239.jpg';
-import bambooImg from '../assets/images/bamboo_products_1785757801080.jpg';
+// Product Items Images - Other Sectors
+import mangoPickleImg from '../assets/images/mango_pickle_jar_1785663299589.jpg';
 import juteShoppingBagsImg from '../assets/images/jute-shopping-bags.png';
-import lampsImg from '../assets/images/decorative_lamps_1785757828733.jpg';
-import clayPotsImg from '../assets/images/clay_pots_1785757898575.jpg';
-import giftItemsImg from '../assets/images/gift_items_1785757932694.jpg';
-
-import cottonFabricImg from '../assets/images/cotton_fabric.jpeg';
-import banarasiSilkImg from '../assets/images/banarasi_silk.jpeg';
-import chanderiFabricImg from '../assets/images/chanderi_fabric.jpeg';
-import silkFabricImg from '../assets/images/silk_fabric.jpeg';
-import linenFabricImg from '../assets/images/linen_fabric.jpeg';
-import rayonFabricImg from '../assets/images/rayon_fabric.jpeg';
-import khadiFabricImg from '../assets/images/khadi_fabric.jpeg';
-import kalamkariFabricImg from '../assets/images/kalamkari_fabric.jpeg';
-import polyesterFabricImg from '../assets/images/polyester_fabric.jpeg';
-import denimFabricImg from '../assets/images/denim_fabric.jpeg';
-import velvetFabricImg from '../assets/images/velvet_fabric.jpeg';
-import woolFabricImg from '../assets/images/wool_fabric.jpeg';
-import viscoseFabricImg from '../assets/images/viscose_fabric.jpeg';
-
-import catlaImg from '../assets/images/catla.jpeg';
-import crabsImg from '../assets/images/crabs.jpeg';
-import hilsaImg from '../assets/images/hilsa.jpeg';
-import lobsterImg from '../assets/images/lobster.jpeg';
-import mackerelImg from '../assets/images/mackerel.jpeg';
-import pomfretImg from '../assets/images/pomfret.jpeg';
-import prawnsImg from '../assets/images/prawns.jpeg';
-import rohuImg from '../assets/images/rohu.jpeg';
-import salmonImg from '../assets/images/salmon.jpeg';
-import sardineImg from '../assets/images/sardine.jpeg';
-import tunaImg from '../assets/images/tuna.jpeg';
-
-import milletProsoImg from '../assets/images/proso_millet.png';
-import milletSorghumImg from '../assets/images/sorghum_millet.png';
 import milletFoxtailImg from '../assets/images/foxtail-millet.png';
 import milletFingerImg from '../assets/images/finger-millet.png';
 import milletPearlImg from '../assets/images/pearl-millet.png';
 import milletKodoImg from '../assets/images/kodo-millet.png';
 import milletLittleImg from '../assets/images/little-millet.png';
 import milletBarnyardImg from '../assets/images/barnyard-millet.png';
-import mysorePakImg from '../assets/images/mysore_pak.png';
-import ribbonPakodaImg from '../assets/images/ribbon-pakoda.png';
-import ippaPuvvuImg from '../assets/images/ippa-puvvu-laddu.png';
-import motichoorImg from '../assets/images/motichoor-laddu.png';
-import kajuKatliImg from '../assets/images/kaju-katli.png';
-import badushaImg from '../assets/images/badusha.png';
-import mixtureImg from '../assets/images/mixture.png';
-import karamBoondiImg from '../assets/images/karam-boondi.png';
-import murukuluImg from '../assets/images/murukulu.png';
-import mahuaCookiesImg from '../assets/images/mahua-cookies.png';
+import milletProsoImg from '../assets/images/proso_millet.png';
+import milletSorghumImg from '../assets/images/sorghum_millet.png';
+import aloeveraGelImg from '../assets/images/aloevera_gel.jpeg';
 
-import categoryCosmeticsImg from '../assets/images/category-cosmetics.png';
-import categoryDryFruitsImg from '../assets/images/category-dry-fruits.png';
-import categoryFabricsImg from '../assets/images/category-fabrics.png';
-import categoryGamingImg from '../assets/images/category-gaming.png';
-import categoryHandcraftsImg from '../assets/images/category-handcrafts.png';
-import categoryInteriorsImg from '../assets/images/category-interiors.png';
-import categoryJuteBagsImg from '../assets/images/category-jute-bags.png';
-import categoryMilletsImg from '../assets/images/category-millets.png';
-import categoryPicklesImg from '../assets/images/category-pickles.jpeg';
-import categorySnacksImg from '../assets/images/category-snacks.png';
-import categorySpicesPowdersImg from '../assets/images/category-spices-powders.jpeg';
-import industrialSolarPvImg from '../assets/images/industrial-solar-pv.jpg';
-import engineeringAlloySteelsImg from '../assets/images/engineering-alloy-steels.jpg';
-import medicalSurgicalInstrumentsImg from '../assets/images/medical-surgical-instruments.jpg';
-
-const spicesPowdersImg = categorySpicesPowdersImg;
-const juteBagsImg = categoryJuteBagsImg;
-const honeyImg = honeyJarImg;
-const herbalCosmeticsImg = herbalSoapsImg;
-const interiorsImg = designerCurtainsImg;
-const gamingImg = gamingKeyboardImg;
-
-const sweetsCollectionImg = mysorePakImg;
-const organicHoneyImg = honeyImg;
-const herbalCareImg = herbalCosmeticsImg;
-
+// Aliases used in Category & Product definitions
+const podiesMainImg = categorySpicesPowdersImg;
 const picklesMainImg = categoryPicklesImg;
-const milletsMainImg = categoryMilletsImg;
-const podiesMainImg = spicesPowdersImg;
-const honeyMainImg = honeyImg;
 const snacksMainImg = categorySnacksImg;
-const juteBagsMainImg = juteBagsImg;
+const milletsMainImg = categoryMilletsImg;
+const juteBagsMainImg = categoryJuteBagsImg;
+const honeyMainImg = honeyJarImg;
 const dryfruitsMainImg = categoryDryFruitsImg;
 const cosmeticsMainImg = categoryCosmeticsImg;
 const handcraftMainImg = categoryHandcraftsImg;
 const fabricsMainImg = categoryFabricsImg;
 const gamingMainImg = categoryGamingImg;
 const interiorsMainImg = categoryInteriorsImg;
-
-
-const milletProsoPackImg = milletProsoImg;
-const milletSorghumPackImg = milletSorghumImg;
+const sweetsCollectionImg = mysorePakImg;
+const herbalCareImg = aloeveraGelImg;
 
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { ContactForm } from '../forms/ContactForm';
 import { COMPANY_INFO } from '../../constants/companyInfo';
-import { MapPin, Phone, Mail, MessageSquare, Clock, Globe } from 'lucide-react';
-import contactBannerBg from '../../assets/images/bamboo_products_1785757801080.jpg';
+import { MapPin, Mail, MessageSquare, Clock, Globe } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   return (

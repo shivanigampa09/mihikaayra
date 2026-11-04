@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ALL_PRODUCTS } from '../constants/productsData';
 import { PageHeader } from '../components/layout/PageHeader';
 import { ProductCard } from '../components/cards/ProductCard';
-import { Globe, ShieldCheck, CheckCircle2, ArrowRight, Package, Truck, Clock, Award } from 'lucide-react';
+import { Globe, CheckCircle2 } from 'lucide-react';
 import { useQuote } from '../context/QuoteContext';
 import { QuoteNowButton } from '../components/common/QuoteNowButton';
 

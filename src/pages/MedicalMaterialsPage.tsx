@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/layout/PageHeader';
-import { Factory, Sparkles, Stethoscope, ShieldCheck, Activity } from 'lucide-react';
+import { Factory, Sparkles, Stethoscope, ShieldCheck } from 'lucide-react';
 import { QuoteNowButton } from '../components/common/QuoteNowButton';
 
 import surgicalInstrumentsImg from '../assets/images/medical-surgical-instruments.jpg';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, ArrowRight, ShieldCheck, Mail } from 'lucide-react';
+import { Globe, ShieldCheck, Mail } from 'lucide-react';
 import { useQuote } from '../../context/QuoteContext';
 
 export const CTASection: React.FC = () => {

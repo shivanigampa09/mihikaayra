@@ -1,6 +1,5 @@
 import { GalleryItem } from '../types';
 import redChilliPowderImg from '../assets/images/black-pepper.jpeg';
-import cashewKajuImg from '../assets/images/cashew_kaju_1785757488672.jpg';
 import mysorePakImg from '../assets/images/mysore_pak.png';
 import ippaPuvvuImg from '../assets/images/ippa_puvvu_laddu_1786088519413.jpg';
 import aloeveraGelImg from '../assets/images/aloevera_gel.jpeg';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Search, Package, ArrowRight, Tag } from 'lucide-react';
+import { X, Search, ArrowRight, Tag } from 'lucide-react';
 import { useQuote } from '../../context/QuoteContext';
 import { ALL_PRODUCTS, PRODUCT_CATEGORIES } from '../../constants/productsData';
 

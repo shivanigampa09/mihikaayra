@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { GALLERY_ITEMS } from '../../constants/galleryData';
-import { GalleryItem } from '../../types';
 import { Eye, MapPin } from 'lucide-react';
 import { GalleryPopup } from './GalleryPopup';
 

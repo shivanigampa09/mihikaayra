@@ -15,7 +15,6 @@ import handcraftsImg from '../../assets/images/category-handcrafts.png';
 import fabricsImg from '../../assets/images/category-fabrics.png';
 import gamingImg from '../../assets/images/category-gaming.png';
 import interiorsImg from '../../assets/images/category-interiors.png';
-import mixtureImg from '../../assets/images/mixture_snack_1786088588483.jpg';
 import automobilesImg from '../../assets/images/sector-automobiles.png';
 import industrialImg from '../../assets/images/industrial_ev_batteries_1786176288833.jpg';
 import medicalImg from '../../assets/images/sector-medical-materials.png';

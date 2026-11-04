@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ProductItem } from '../../types';
-import { Globe, ArrowRight, ShieldCheck, Tag } from 'lucide-react';
+import { Globe, ArrowRight } from 'lucide-react';
 import { useQuote } from '../../context/QuoteContext';
 import { QuoteNowButton } from '../common/QuoteNowButton';
 

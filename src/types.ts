@@ -1,33 +1,3 @@
-export type SectorCategory = 
-  | 'import'
-  | 'export'
-  | 'merchant'
-  | 'agricultural'
-  | 'food'
-  | 'marine'
-  | 'global_trade'
-  | 'logistics'
-  | 'supply_chain'
-  | 'consulting'
-  | 'automobiles'
-  | 'industrial'
-  | 'medical'
-  | 'engineering'
-  | 'products';
-
-export interface SectorItem {
-  id: string;
-  category: SectorCategory;
-  title: string;
-  subtitle: string;
-  description: string;
-  icon: string; // Lucide icon name
-  badgeText: string;
-  features: string[];
-  gradient: string;
-  bgImage?: string;
-}
-
 export type ProductCategorySlug = 
   | 'sweets'
   | 'spices'
@@ -125,13 +95,6 @@ export interface TestimonialItem {
   rating: number;
   comment: string;
   avatar: string;
-}
-
-export interface FAQItem {
-  id: string;
-  category: 'General' | 'Export' | 'Import' | 'Quality & Custom' | 'Logistics';
-  question: string;
-  answer: string;
 }
 
 export interface InquiryFormData {
