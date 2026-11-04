@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 import { COMPANY_INFO } from '../../constants/companyInfo';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../lib/firebase';
 
 export const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,10 +20,22 @@ export const ContactForm: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Save to Cloud Firestore database if Firebase is configured
+    if (db) {
+      try {
+        await addDoc(collection(db, 'contact_inquiries'), {
+          ...formData,
+          createdAt: serverTimestamp(),
+        });
+      } catch (err) {
+        console.error('Error saving inquiry to database:', err);
+      }
+    }
+
     const emailSubject = `Query from ${formData.fullName}`;
     const messageBody = `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProduct Category: ${formData.productCategory}\n\nQuery / Message:\n${formData.message}`;
     

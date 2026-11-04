@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { X, Eye, EyeOff, ArrowUpRight, CheckCircle2, Mail, Phone } from 'lucide-react';
+import { X, Eye, EyeOff, ArrowUpRight, CheckCircle2, Mail, Phone, AlertCircle, Loader2 } from 'lucide-react';
 import { useQuote } from '../../context/QuoteContext';
+import { useAuth } from '../../context/AuthContext';
 
 export const AuthModal: React.FC = () => {
   const { isAuthModalOpen, closeAuthModal, authModalView, setAuthModalView } = useQuote();
+  const { register, login, resetPassword, isFirebaseConfigured } = useAuth();
 
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
   // Forgot Password Options
   const [forgotMethod, setForgotMethod] = useState<'email' | 'phone'>('email');
   const [forgotEmail, setForgotEmail] = useState('');
   const [forgotPhone, setForgotPhone] = useState('');
+
+  // Clear messages when modal opens or view changes
+  useEffect(() => {
+    setErrorMessage('');
+    setIsSubmitted(false);
+  }, [authModalView, isAuthModalOpen]);
 
   // Prevent background scrolling when modal is open
   useEffect(() => {
@@ -49,38 +59,109 @@ export const AuthModal: React.FC = () => {
 
   if (!isAuthModalOpen) return null;
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSuccessMessage('Account created successfully! Welcome to Mihika Ayra Imports and Exports.');
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      closeAuthModal();
-    }, 2000);
-  };
-
-  const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSuccessMessage('Signed in successfully! Welcome back.');
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      closeAuthModal();
-    }, 1800);
-  };
-
-  const handleForgotSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (forgotMethod === 'email') {
-      setSuccessMessage(`Password reset link sent to ${forgotEmail || 'your email'}. Please check your inbox.`);
-    } else {
-      setSuccessMessage(`OTP code sent to ${forgotPhone || 'your phone number'}. Please verify to reset password.`);
+  const getFriendlyErrorMessage = (error: any) => {
+    const code = error?.code || '';
+    if (code === 'auth/email-already-in-use') {
+      return 'An account with this email already exists. Please login instead.';
     }
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      closeAuthModal();
-    }, 2500);
+    if (code === 'auth/invalid-email') {
+      return 'Please enter a valid email address.';
+    }
+    if (code === 'auth/weak-password') {
+      return 'Password is too weak. Please use at least 6 characters.';
+    }
+    if (code === 'auth/user-not-found' || code === 'auth/wrong-password' || code === 'auth/invalid-credential') {
+      return 'Invalid email or password. Please verify and try again.';
+    }
+    if (code === 'auth/too-many-requests') {
+      return 'Access temporarily disabled due to multiple failed attempts. Please try again later or reset your password.';
+    }
+    return error?.message || 'An error occurred. Please try again.';
+  };
+
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (registerData.password.length < 6) {
+      setErrorMessage('Password must be at least 6 characters long.');
+      return;
+    }
+
+    if (!isFirebaseConfigured) {
+      setErrorMessage('Firebase credentials not configured yet. Please add your Firebase keys to your .env file.');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      await register(registerData);
+      setSuccessMessage('Account created successfully! Welcome to Mihika Ayra Traders & Imports & Exports.');
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        closeAuthModal();
+      }, 2000);
+    } catch (err: any) {
+      setErrorMessage(getFriendlyErrorMessage(err));
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleLoginSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!isFirebaseConfigured) {
+      setErrorMessage('Firebase credentials not configured yet. Please add your Firebase keys to your .env file.');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      await login(loginData.email, loginData.password);
+      setSuccessMessage('Signed in successfully! Welcome back.');
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        closeAuthModal();
+      }, 1800);
+    } catch (err: any) {
+      setErrorMessage(getFriendlyErrorMessage(err));
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleForgotSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!isFirebaseConfigured) {
+      setErrorMessage('Firebase credentials not configured yet. Please add your Firebase keys to your .env file.');
+      return;
+    }
+
+    if (forgotMethod === 'phone') {
+      setErrorMessage('Password reset via Phone OTP is undergoing maintenance. Please select Email to reset your password instantly.');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      await resetPassword(forgotEmail);
+      setSuccessMessage(`Password reset link sent to ${forgotEmail}. Please check your inbox (and spam folder) to set a new password.`);
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        closeAuthModal();
+      }, 3500);
+    } catch (err: any) {
+      setErrorMessage(getFriendlyErrorMessage(err));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -106,6 +187,13 @@ export const AuthModal: React.FC = () => {
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
+          {errorMessage && (
+            <div className="mb-5 p-3.5 bg-rose-50 border border-rose-200 rounded-xl flex items-start gap-3 text-rose-700 text-xs sm:text-sm animate-in fade-in duration-200">
+              <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-500" />
+              <span className="leading-snug">{errorMessage}</span>
+            </div>
+          )}
+
           {isSubmitted ? (
             <div className="py-12 text-center space-y-4">
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
@@ -318,10 +406,20 @@ export const AuthModal: React.FC = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-[#E63946] hover:bg-[#d62828] text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
+                    disabled={isLoading}
+                    className="w-full bg-[#E63946] hover:bg-[#d62828] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
                   >
-                    <span>Create account</span>
-                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                        <span>Creating account...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Create account</span>
+                        <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </>
+                    )}
                   </button>
 
                   {/* Already signed up? Login */}
@@ -404,10 +502,20 @@ export const AuthModal: React.FC = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-[#E63946] hover:bg-[#d62828] text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
+                    disabled={isLoading}
+                    className="w-full bg-[#E63946] hover:bg-[#d62828] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
                   >
-                    <span>Sign in</span>
-                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                        <span>Signing in...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Sign in</span>
+                        <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </>
+                    )}
                   </button>
 
                   {/* Not signed up? Create an account */}
@@ -493,10 +601,20 @@ export const AuthModal: React.FC = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-[#E63946] hover:bg-[#d62828] text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
+                    disabled={isLoading}
+                    className="w-full bg-[#E63946] hover:bg-[#d62828] disabled:opacity-60 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
                   >
-                    <span>Submit</span>
-                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                        <span>Sending reset email...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Reset Link</span>
+                        <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </>
+                    )}
                   </button>
 
                   {/* Back to Login or Create Account */}

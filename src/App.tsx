@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QuoteProvider } from './context/QuoteContext';
+import { AuthProvider } from './context/AuthContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
@@ -45,8 +46,9 @@ import { NotFound } from './pages/NotFound';
 
 export default function App() {
   return (
-    <QuoteProvider>
-      <Router>
+    <AuthProvider>
+      <QuoteProvider>
+        <Router>
         <ScrollToTop />
         <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-[#0077B6] selection:text-white">
           
@@ -123,5 +125,6 @@ export default function App() {
         </div>
       </Router>
     </QuoteProvider>
-  );
+  </AuthProvider>
+);
 }

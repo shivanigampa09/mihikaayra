@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, User, Package, Calendar, Truck, FileText, CheckCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, User, Package, Calendar, Truck, FileText, CheckCircle, LogOut } from 'lucide-react';
 import { PRODUCT_CATEGORIES } from '../../constants/productsData';
 import { useQuote } from '../../context/QuoteContext';
+import { useAuth } from '../../context/AuthContext';
 import { Logo } from '../common/Logo';
 
 export const Navbar: React.FC = () => {
@@ -10,11 +11,13 @@ export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isQuickMenuOpen, setIsQuickMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [activeQuickModal, setActiveQuickModal] = useState<'schedule' | 'tracking' | 'documentation' | null>(null);
   const [trackingNumber, setTrackingNumber] = useState('');
 
   const location = useLocation();
   const { openQuoteModal, openAuthModal } = useQuote();
+  const { currentUser, userProfile, logout } = useAuth();
 
   const isHomePage = location.pathname === '/';
 
@@ -35,6 +38,7 @@ export const Navbar: React.FC = () => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
     setIsQuickMenuOpen(false);
+    setIsUserMenuOpen(false);
   }, [location.pathname]);
 
   // Lock body scroll when mobile menu drawer is open
@@ -96,14 +100,24 @@ export const Navbar: React.FC = () => {
               <Logo size="sm" showText={true} className="gap-1.5 sm:gap-2" />
             </Link>
 
-            {/* RIGHT: LOGIN ICON ONLY */}
-            <button
-              onClick={() => openAuthModal('register')}
-              className="p-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 text-[#00B4D8] cursor-pointer shrink-0 z-10"
-              title="Login / Register"
-            >
-              <User className="w-5 h-5" />
-            </button>
+            {/* RIGHT: LOGIN / USER ICON */}
+            {currentUser ? (
+              <button
+                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                className="w-9 h-9 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shadow-md border border-white/20 cursor-pointer shrink-0 z-10"
+                title={userProfile?.firstName || currentUser.email || 'My Account'}
+              >
+                {(userProfile?.firstName?.[0] || currentUser.email?.[0] || 'U').toUpperCase()}
+              </button>
+            ) : (
+              <button
+                onClick={() => openAuthModal('register')}
+                className="p-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 text-[#00B4D8] cursor-pointer shrink-0 z-10"
+                title="Login / Register"
+              >
+                <User className="w-5 h-5" />
+              </button>
+            )}
           </div>
 
           {/* DESKTOP NAVBAR LAYOUT (hidden lg:flex) */}
@@ -268,13 +282,62 @@ export const Navbar: React.FC = () => {
 
             {/* RIGHT ACTION CONTROLS (DESKTOP) */}
             <div className="flex items-center space-x-3">
-              <button
-                onClick={() => openAuthModal('register')}
-                className="flex items-center gap-1.5 text-xs font-semibold text-slate-200 hover:text-white px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/10 cursor-pointer"
-              >
-                <User className="w-4 h-4 text-[#00B4D8]" />
-                <span>Login / Register</span>
-              </button>
+              {currentUser ? (
+                <div className="relative">
+                  <button
+                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                    className="flex items-center gap-2 text-xs font-semibold text-slate-200 hover:text-white px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 transition-colors cursor-pointer"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-[11px] shadow-sm">
+                      {(userProfile?.firstName?.[0] || currentUser.email?.[0] || 'U').toUpperCase()}
+                    </div>
+                    <span className="max-w-[130px] truncate text-white">
+                      {userProfile?.firstName ? `${userProfile.firstName}` : (currentUser.email?.split('@')[0] || 'My Account')}
+                    </span>
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isUserMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {isUserMenuOpen && (
+                    <div className="absolute right-0 top-full mt-2 w-64 bg-[#071927] border border-white/15 rounded-xl shadow-2xl p-3 z-50 animate-in fade-in duration-150">
+                      <div className="border-b border-white/10 pb-2 mb-2">
+                        <p className="text-xs font-bold text-white truncate">
+                          {userProfile?.firstName ? `${userProfile.firstName} ${userProfile.lastName || ''}` : 'Mihika Ayra Client'}
+                        </p>
+                        <p className="text-[11px] text-slate-300 truncate">{currentUser.email}</p>
+                        {userProfile?.companyName && (
+                          <p className="text-[10px] text-[#D4AF37] mt-0.5 font-medium truncate">
+                            {userProfile.companyName}
+                          </p>
+                        )}
+                        {userProfile?.sector && (
+                          <span className="inline-block mt-1 text-[9px] bg-white/10 text-slate-300 px-1.5 py-0.5 rounded">
+                            {userProfile.sector}
+                          </span>
+                        )}
+                      </div>
+
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          logout();
+                        }}
+                        className="w-full text-left px-2.5 py-1.5 text-xs text-rose-300 hover:text-rose-100 hover:bg-rose-500/20 rounded-lg flex items-center gap-2 transition-colors cursor-pointer"
+                      >
+                        <LogOut className="w-3.5 h-3.5" />
+                        <span>Sign Out</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button
+                  onClick={() => openAuthModal('register')}
+                  className="flex items-center gap-1.5 text-xs font-semibold text-slate-200 hover:text-white px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors border border-white/10 cursor-pointer"
+                >
+                  <User className="w-4 h-4 text-[#00B4D8]" />
+                  <span>Login / Register</span>
+                </button>
+              )}
             </div>
 
           </div>
@@ -317,16 +380,41 @@ export const Navbar: React.FC = () => {
               <FileText className="w-4 h-4 text-[#00B4D8]" /> Documentation
             </button>
 
-            <div className="pt-3 border-t border-white/10">
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  openAuthModal('register');
-                }}
-                className="w-full text-slate-200 hover:text-white bg-white/10 font-semibold py-2.5 rounded-xl text-sm flex items-center justify-center gap-2 cursor-pointer mt-1"
-              >
-                <User className="w-4 h-4 text-[#00B4D8]" /> Login / Register
-              </button>
+            <div className="pt-3 border-t border-white/10 space-y-2">
+              {currentUser ? (
+                <div className="p-3 bg-white/5 rounded-xl border border-white/10 space-y-2">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-xs">
+                      {(userProfile?.firstName?.[0] || currentUser.email?.[0] || 'U').toUpperCase()}
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="text-xs font-bold text-white truncate">
+                        {userProfile?.firstName ? `${userProfile.firstName} ${userProfile.lastName || ''}` : 'Mihika Ayra Client'}
+                      </p>
+                      <p className="text-[11px] text-slate-300 truncate">{currentUser.email}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      logout();
+                    }}
+                    className="w-full text-rose-300 hover:text-white bg-rose-500/20 font-semibold py-2 rounded-lg text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors"
+                  >
+                    <LogOut className="w-3.5 h-3.5" /> Sign Out
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    openAuthModal('register');
+                  }}
+                  className="w-full text-slate-200 hover:text-white bg-white/10 font-semibold py-2.5 rounded-xl text-sm flex items-center justify-center gap-2 cursor-pointer mt-1"
+                >
+                  <User className="w-4 h-4 text-[#00B4D8]" /> Login / Register
+                </button>
+              )}
             </div>
           </div>
         )}
