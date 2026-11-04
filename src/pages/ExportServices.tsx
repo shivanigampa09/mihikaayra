@@ -3,6 +3,7 @@ import { PageHeader } from '../components/layout/PageHeader';
 import { Globe, Ship, CheckCircle2, ArrowRight, PackageCheck } from 'lucide-react';
 import { useQuote } from '../context/QuoteContext';
 import headerBg from '../assets/images/bamboo_products_1785757801080.jpg';
+import exportGraphicImg from '../assets/images/from_india_to_the_world_export.jpg';
 
 export const ExportServices: React.FC = () => {
   const { openQuoteModal } = useQuote();
@@ -43,6 +44,15 @@ export const ExportServices: React.FC = () => {
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
               We welcome inquiries from international buyers seeking reliable Indian suppliers and competitive pricing across a wide range of product categories.
             </p>
+          </div>
+
+          {/* From India to the World Showcase Banner */}
+          <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200/90 bg-white group hover:shadow-2xl transition-all duration-300">
+            <img
+              src={exportGraphicImg}
+              alt="From India to the World - Exporting Quality, Building Global Partnerships"
+              className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.01]"
+            />
           </div>
 
           {/* Two-Column Grid: Our Export Services & Our Global Reach */}
