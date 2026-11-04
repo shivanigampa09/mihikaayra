@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
-import logoImg from '../../assets/images/mihika-ayra-logo.jpeg';
+
+const logoImg = '/mihika-ayra-logo.jpeg';
 
 interface LogoProps {
   className?: string;
