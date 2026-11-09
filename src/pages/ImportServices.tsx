@@ -3,6 +3,7 @@ import { PageHeader } from '../components/layout/PageHeader';
 import { Building2, CheckCircle2, ShieldCheck, Handshake, ArrowRight, PackageSearch } from 'lucide-react';
 import { useQuote } from '../context/QuoteContext';
 import headerBg from '../assets/images/bamboo_products_1785757801080.jpg';
+import importGraphicImg from '../assets/images/from_the_world_to_india_import.jpg';
 
 export const ImportServices: React.FC = () => {
   const { openQuoteModal } = useQuote();
@@ -47,6 +48,15 @@ export const ImportServices: React.FC = () => {
             <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
               Mihika Ayra Traders and Imports &amp; Exports is an India-based trading business focused on international sourcing, imports, and exports. We aim to connect reliable global suppliers with Indian businesses by sourcing quality products at competitive prices.
             </p>
+          </div>
+
+          {/* From the World to India Showcase Banner */}
+          <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200/90 bg-white group hover:shadow-2xl transition-all duration-300">
+            <img
+              src={importGraphicImg}
+              alt="From the World to India - Importing Quality, Sourcing Globally, Delivering to India"
+              className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.01]"
+            />
           </div>
 
           {/* Our Business Overview Card */}
