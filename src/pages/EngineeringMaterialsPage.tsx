@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/layout/PageHeader';
-import { Factory, Sparkles, Cpu } from 'lucide-react';
+import { Factory, Sparkles, Cpu, Wrench } from 'lucide-react';
 import { QuoteNowButton } from '../components/common/QuoteNowButton';
 
 import aluminum7075Img from '../assets/images/engineering-aluminum-7075.jpg';

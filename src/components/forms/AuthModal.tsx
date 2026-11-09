@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 
 export const AuthModal: React.FC = () => {
   const { isAuthModalOpen, closeAuthModal, authModalView, setAuthModalView } = useQuote();
-  const { register, login, resetPassword, isFirebaseConfigured } = useAuth();
+  const { register, login, resetPassword, resetPasswordByPhone, isFirebaseConfigured } = useAuth();
 
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
@@ -143,20 +143,35 @@ export const AuthModal: React.FC = () => {
       return;
     }
 
-    if (forgotMethod === 'phone') {
-      setErrorMessage('Password reset via Phone OTP is undergoing maintenance. Please select Email to reset your password instantly.');
-      return;
-    }
-
     try {
       setIsLoading(true);
-      await resetPassword(forgotEmail);
-      setSuccessMessage(`Password reset link sent to ${forgotEmail}. Please check your inbox (and spam folder) to set a new password.`);
+
+      if (forgotMethod === 'email') {
+        if (!forgotEmail.trim()) {
+          setErrorMessage('Please enter your registered email address.');
+          return;
+        }
+        await resetPassword(forgotEmail.trim());
+        setSuccessMessage(`Password reset link sent to ${forgotEmail.trim()}. Please check your inbox (and spam folder) to set a new password.`);
+      } else {
+        // Phone number reset method
+        const cleanPhone = forgotPhone.replace(/\D/g, '');
+        if (cleanPhone.length < 10) {
+          setErrorMessage('Please enter a valid 10-digit mobile number.');
+          return;
+        }
+
+        const result = await resetPasswordByPhone(forgotPhone.trim());
+        setSuccessMessage(
+          `Account found for ${forgotPhone}! We have sent a secure password reset link to your registered email (${result.maskedEmail}). Please check your inbox (and spam folder) to reset your password.`
+        );
+      }
+
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
         closeAuthModal();
-      }, 3500);
+      }, 5000);
     } catch (err: any) {
       setErrorMessage(getFriendlyErrorMessage(err));
     } finally {
@@ -439,15 +454,15 @@ export const AuthModal: React.FC = () => {
               {/* VIEW 2: LOGIN */}
               {authModalView === 'login' && (
                 <form onSubmit={handleLoginSubmit} className="space-y-5">
-                  {/* Email */}
+                  {/* Email or Phone Number */}
                   <div>
                     <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">
-                      Email <span className="text-[#E63946]">*</span>
+                      Email or Mobile Number <span className="text-[#E63946]">*</span>
                     </label>
                     <input
-                      type="email"
+                      type="text"
                       required
-                      placeholder="Enter Email"
+                      placeholder="Enter Registered Email or Mobile Number"
                       value={loginData.email}
                       onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:border-transparent transition-all placeholder:text-slate-400"
@@ -585,16 +600,19 @@ export const AuthModal: React.FC = () => {
                   ) : (
                     <div>
                       <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-1">
-                        Phone Number <span className="text-[#E63946]">*</span>
+                        Registered Mobile Number <span className="text-[#E63946]">*</span>
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="Enter Registered Mobile Number"
+                        placeholder="e.g. 70132 58972 or +91 94916 36888"
                         value={forgotPhone}
                         onChange={(e) => setForgotPhone(e.target.value)}
                         className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:border-transparent transition-all placeholder:text-slate-400"
                       />
+                      <p className="text-[11px] text-slate-500 mt-1.5 leading-snug">
+                        Enter the mobile number used when creating your account. We will find your account and send the secure password reset link to your verified email.
+                      </p>
                     </div>
                   )}
 

@@ -7,7 +7,7 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from 'firebase/auth';
-import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, getDoc, collection, query, where, getDocs, serverTimestamp } from 'firebase/firestore';
 import { auth, db, isFirebaseConfigured } from '../lib/firebase';
 
 export interface UserProfile {
@@ -43,9 +43,10 @@ interface AuthContextType {
   loading: boolean;
   isFirebaseConfigured: boolean;
   register: (data: RegisterInput) => Promise<void>;
-  login: (email: string, password: string) => Promise<void>;
+  login: (identifier: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   resetPassword: (email: string) => Promise<void>;
+  resetPasswordByPhone: (phone: string) => Promise<{ email: string; maskedEmail: string; firstName: string }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -115,11 +116,59 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUserProfile(profilePayload);
   };
 
-  const login = async (email: string, password: string) => {
+  const findUserByPhone = async (phone: string): Promise<UserProfile | null> => {
+    if (!db) return null;
+    const cleanInput = phone.replace(/\D/g, '');
+    const last10 = cleanInput.slice(-10);
+    if (last10.length < 10) return null;
+
+    const usersRef = collection(db, 'users');
+
+    // 1. Direct match query
+    try {
+      const q = query(usersRef, where('mobile', '==', phone.trim()));
+      const snap = await getDocs(q);
+      if (!snap.empty) {
+        return snap.docs[0].data() as UserProfile;
+      }
+    } catch (err) {
+      console.warn('Direct phone query fallback:', err);
+    }
+
+    // 2. Scan match last 10 digits
+    try {
+      const allSnap = await getDocs(usersRef);
+      for (const docSnap of allSnap.docs) {
+        const data = docSnap.data() as UserProfile;
+        const cleanDbPhone = (data.mobile || '').replace(/\D/g, '');
+        if (cleanDbPhone.slice(-10) === last10) {
+          return data;
+        }
+      }
+    } catch (err) {
+      console.error('Error scanning users for phone:', err);
+    }
+
+    return null;
+  };
+
+  const login = async (identifier: string, password: string) => {
     if (!auth) {
       throw new Error('Firebase configuration is missing. Please add your Firebase credentials to the .env file.');
     }
-    const cred = await signInWithEmailAndPassword(auth, email, password);
+
+    let emailToUse = identifier.trim();
+
+    // If identifier is not an email (e.g. mobile number entered)
+    if (!emailToUse.includes('@')) {
+      const matched = await findUserByPhone(emailToUse);
+      if (!matched || !matched.email) {
+        throw new Error(`No account found with phone number "${identifier}". Please check your number or log in with your registered email.`);
+      }
+      emailToUse = matched.email;
+    }
+
+    const cred = await signInWithEmailAndPassword(auth, emailToUse, password);
     if (cred.user) {
       await fetchUserProfile(cred.user.uid);
     }
@@ -136,7 +185,34 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       throw new Error('Firebase configuration is missing. Please add your Firebase credentials to the .env file.');
     }
     // Firebase automatically sends a secure password reset link to this email address!
-    await sendPasswordResetEmail(auth, email);
+    await sendPasswordResetEmail(auth, email.trim());
+  };
+
+  const resetPasswordByPhone = async (phone: string) => {
+    if (!auth || !db) {
+      throw new Error('Firebase configuration is missing. Please add your Firebase credentials to the .env file.');
+    }
+
+    const matched = await findUserByPhone(phone);
+    if (!matched || !matched.email) {
+      throw new Error(`No registered account found with phone number "${phone}". Please make sure this number was used during registration, or reset using your registered Email.`);
+    }
+
+    // Dispatch the password reset email to their verified registered email
+    await sendPasswordResetEmail(auth, matched.email);
+
+    // Mask the email for user privacy & verification
+    const [namePart, domainPart] = matched.email.split('@');
+    const maskedName = namePart.length > 2
+      ? `${namePart[0]}${'*'.repeat(Math.max(namePart.length - 2, 3))}${namePart[namePart.length - 1]}`
+      : `${namePart}***`;
+    const maskedEmail = `${maskedName}@${domainPart}`;
+
+    return {
+      email: matched.email,
+      maskedEmail,
+      firstName: matched.firstName || 'Valued Client',
+    };
   };
 
   const value: AuthContextType = {
@@ -148,6 +224,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     login,
     logout,
     resetPassword,
+    resetPasswordByPhone,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

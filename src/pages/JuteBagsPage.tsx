@@ -159,7 +159,7 @@ export const JuteBagsPage: React.FC = () => {
                         Raw Materials:
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
-                        {bag.ingredients.map((ing, i) => (
+                        {bag.specifications.map((ing, i) => (
                           <span key={i} className="text-[11px] bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg font-medium border border-slate-200">
                             {ing}
                           </span>
@@ -174,7 +174,7 @@ export const JuteBagsPage: React.FC = () => {
                         Purpose of Materials:
                       </h4>
                       <p className="text-xs text-slate-700 leading-relaxed font-sans">
-                        {bag.purposeOfIngredients}
+                        {bag.durabilityFeatures}
                       </p>
                     </div>
 
