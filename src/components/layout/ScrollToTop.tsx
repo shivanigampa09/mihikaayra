@@ -7,12 +7,24 @@ export const ScrollToTop = () => {
   useEffect(() => {
     if (hash) {
       const targetId = hash.slice(1);
-      const scrollToTarget = () => {
-        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const attemptScroll = () => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return true;
+        }
+        return false;
       };
 
-      const animationFrame = requestAnimationFrame(scrollToTarget);
-      return () => cancelAnimationFrame(animationFrame);
+      if (!attemptScroll()) {
+        const t1 = setTimeout(attemptScroll, 100);
+        const t2 = setTimeout(attemptScroll, 300);
+        return () => {
+          clearTimeout(t1);
+          clearTimeout(t2);
+        };
+      }
+      return;
     }
 
     window.scrollTo({

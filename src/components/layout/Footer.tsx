@@ -15,6 +15,14 @@ export const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleProductsClick = (e: React.MouseEvent) => {
+    const el = document.getElementById('imports-exports-sectors');
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <footer className="bg-[#0B132B] text-slate-300 pt-14 pb-8 relative overflow-hidden font-sans">
       
@@ -46,7 +54,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/" onClick={handleHomeClick} className="hover:text-[#38BDF8] transition-colors">Home</Link></li>
               <li><Link to="/features" className="hover:text-[#38BDF8] transition-colors">Features</Link></li>
               <li><Link to="/benefits" className="hover:text-[#38BDF8] transition-colors">Benefits</Link></li>
-              <li><Link to="/products" className="hover:text-[#38BDF8] transition-colors">Products</Link></li>
+              <li><Link to="/#imports-exports-sectors" onClick={handleProductsClick} className="hover:text-[#38BDF8] transition-colors">Products</Link></li>
               <li><Link to="/contact" className="hover:text-[#38BDF8] transition-colors">Contact Us</Link></li>
             </ul>
           </div>

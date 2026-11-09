@@ -67,6 +67,14 @@ export const Navbar: React.FC = () => {
       handleHomeClick(e);
       return;
     }
+    if (link.name === 'Products') {
+      const el = document.getElementById('imports-exports-sectors');
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
   };
 
   const handleHomeClick = (e: React.MouseEvent) => {
